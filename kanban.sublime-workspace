@@ -1,0 +1,467 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"j",
+				"jQM"
+			],
+			[
+				"post",
+				"postgresql"
+			],
+			[
+				"bre",
+				"brewery_id"
+			],
+			[
+				"to",
+				"to_i"
+			],
+			[
+				"brw",
+				"brewery_id"
+			],
+			[
+				"e",
+				"el"
+			],
+			[
+				"right",
+				"pull-right"
+			],
+			[
+				"Admin",
+				"AdminAnswerView"
+			],
+			[
+				"fa",
+				"fadeIn"
+			],
+			[
+				"append",
+				"appendMsg"
+			],
+			[
+				"an",
+				"answerBad"
+			],
+			[
+				"answer",
+				"answerGood"
+			],
+			[
+				"Ans",
+				"AnswersView"
+			],
+			[
+				"An",
+				"Answer"
+			],
+			[
+				"render",
+				"renderQuestion"
+			],
+			[
+				"answ",
+				"answers"
+			],
+			[
+				"ans",
+				"answers"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/scripts/routes/kanban.js",
+			"settings":
+			{
+				"buffer_size": 1369,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/templates/usersIssues.ejs",
+			"settings":
+			{
+				"buffer_size": 280,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/views/usersIssues.js",
+			"settings":
+			{
+				"buffer_size": 756,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/collections/projects.js",
+			"settings":
+			{
+				"buffer_size": 542,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/erik/Documents/js/kanban/app/scripts/main.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/project.js",
+		"/home/erik/Documents/js/kanban/app/scripts/views/usersIssues.js",
+		"/home/erik/Documents/js/kanban/app/index.html",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/usersIssues.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/projectsIssues.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/views/projectsIssues.js",
+		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
+		"/home/erik/Documents/js/kanban/bower.json",
+		"/home/erik/Documents/js/kanban/node_modules/bower/node_modules/update-notifier/node_modules/request/index.js",
+		"/home/erik/Documents/js/kanban/node_modules/bower/lib/commands/uninstall.js",
+		"/home/erik/Documents/js/kanban/app/bower_components/modernizr/feature-detects/unicode.js",
+		"/home/erik/Documents/js/kanban/node_modules/bower/templates/std/update-notice.std",
+		"/home/erik/Documents/js/kanban/app/bower_components/underscore/underscore.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/project-template.mustache",
+		"/home/erik/Documents/js/kanban/app/scripts/views/project.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
+		"/etc/default/rcS",
+		"/home/erik/Documents/ruby/redmine/plugins/bbapi/init.rb",
+		"/home/erik/Documents/ruby/redmine/config/database.yml",
+		"/home/erik/.bashrc",
+		"/home/erik/Documents/ruby/redmine/log/development.log",
+		"/home/erik/Documents/ruby/redmine/log/production.log",
+		"/home/erik/Documents/ruby/redmine/database.yml",
+		"/home/erik/Documents/ruby/quest/views/index.erb",
+		"/home/erik/Documents/ruby/ruby/app.rb",
+		"/home/erik/Documents/ruby/about_sql/config/migrations/002_create_table_brands.rb",
+		"/home/erik/Documents/ruby/about_sql/config/migrations/001_create_table_breweries.rb",
+		"/home/erik/Documents/ruby/about_sql/lib/app.rb",
+		"/home/erik/Documents/ruby/about_sql/config/database.yml",
+		"/home/erik/Documents/ruby/about_sql/lib/database.rb",
+		"/home/erik/Documents/ruby/about_sql/views/index.slim",
+		"/home/erik/Documents/ruby/about_sql/Gemfile",
+		"/home/erik/Documents/ruby/redisTest/Gemfile",
+		"/home/erik/Documents/ruby/redisTest/app/models/article.rb",
+		"/home/erik/Documents/ruby/redisTest/app/views/articles/index.html.erb",
+		"/home/erik/Documents/ruby/redisTest/app/controllers/articles_controller.rb",
+		"/home/erik/Documents/ruby/quest/public/js/views/adminQuestion.js",
+		"/home/erik/Documents/ruby/quest/public/js/views/admin.js",
+		"/home/erik/Documents/ruby/quest/Gemfile",
+		"/home/erik/Documents/ruby/quest/public/js/models/answer.js",
+		"/home/erik/Documents/ruby/quest/app.rb",
+		"/home/erik/Documents/ruby/quest/README.md",
+		"/home/erik/Documents/ruby/redisTest/config/routes.rb",
+		"/home/erik/Documents/ruby/quest/public/js/app.js",
+		"/home/erik/Documents/ruby/quest/public/css/style.css",
+		"/home/erik/Documents/ruby/quest/README",
+		"/home/erik/Documents/ruby/quest/public/js/views/question.js",
+		"/home/erik/Documents/ruby/quest/public/js/views/quiz.js",
+		"/home/erik/Documents/ruby/quest/config.ru",
+		"/home/erik/Documents/ruby/quest/public/js/collections/quiz.js",
+		"/home/erik/Documents/ruby/quest/public/js/models/question.js",
+		"/home/erik/Documents/ruby/quest/public/js/models/answer.js.js",
+		"/home/erik/Documents/ruby/quest/public/js/views/modalView.js",
+		"/home/erik/Documents/ruby/quest/questions.txt",
+		"/home/erik/Documents/ruby/quest/public/index.html",
+		"/home/erik/Documents/ruby/quest/public/views/index.erb",
+		"//etc/default/tlp",
+		"/home/erik/Documents/ruby/blog/Gemfile",
+		"/home/erik/Documents/ruby/blog/app/controllers/articles_controller.rb",
+		"/home/erik/Documents/ruby/blog/app/views/articles/index.html.erb",
+		"/home/erik/Documents/ruby/quest/public/js/views/answer.js",
+		"/home/erik/Documents/ruby/quest-web/config.ru",
+		"/home/erik/Documents/ruby/quest-web/Gemfile",
+		"/home/erik/Documents/ruby/sinatra/app.rb",
+		"/home/erik/Documents/ruby/quest-web/condif.ru",
+		"/home/erik/Documents/ruby/quest-web/quest_web.rb",
+		"/home/erik/Documents/ruby/ruby/config.ru",
+		"/home/erik/Documents/ruby/sinatra-example/app.rb",
+		"/home/erik/Documents/ruby/sinatra-example/config.modular.ru",
+		"/home/erik/Documents/ruby/sinatra-example/app.modular.rb",
+		"/home/erik/Documents/ruby/sinatra-example/README",
+		"/home/erik/Documents/ruby/sinatra-example/config.ru",
+		"/home/erik/Documents/ruby/sinatra-example/config.",
+		"/home/erik/Documents/ruby/quest-web/quest.rb",
+		"/home/erik/Documents/ruby/quest-web/ruby.txt",
+		"/var/lib/dpkg/info/xserver-common-lts-raring.postrm",
+		"/run/user/erik/gvfs/ftp:host=stanuj.sk,user=stanuj.sk/catalog/view/theme/centred/stylesheet/stylesheet.css",
+		"/home/erik/Documents/ruby/blog/config/routes.rb",
+		"/home/erik/Documents/ruby/blog/app/models/article.rb",
+		"/home/erik/Documents/ruby/blog/app/views/articles/index.json.jbuilder",
+		"/home/erik/Documents/ruby/blog/app/views/articles/show.json.jbuilder",
+		"/home/erik/Documents/ruby/blog/app/views/articles/show.html.erb",
+		"/home/erik/Documents/test"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Majlo",
+			"appendMsg",
+			"admi",
+			"panel",
+			"end",
+			"root"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/scripts/routes/kanban.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								641,
+								631
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/scripts/templates/usersIssues.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/scripts/views/usersIssues.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 756,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								375
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/scripts/collections/projects.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								410,
+								410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "kanban.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/media/erik/Windows7_OS/Program Files (x86)/Zend/Apache2/htdocs/teiresias_place_allocation/teiresias_place_allocation.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 306.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
