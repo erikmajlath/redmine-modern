@@ -13,12 +13,14 @@ define([
 
         initialize: function(){
         	console.log('User & Issues view initliazed!');
+            this.collection = Backbone.c.projects;
+
             this.listenTo(this.collection, 'reset add remove', this.renderContent);
         },
 
         render: function(){
         	this.$el.html(this.template());
-            this.renderContent();
+            //this.renderContent();
         	return this;
         },
 

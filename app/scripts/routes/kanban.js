@@ -6,14 +6,23 @@ define([
     'views/usersIssues',
     'views/projectsIssues',
     'collections/projects',
-], function ($, Backbone, userIssues, projectsIssues, projects) {
+    'collections/issues',
+    'collections/users',
+    'collections/times',
+], function ($, Backbone, userIssues, projectsIssues, projects, issues, users, times) {
     'use strict';
 
     var KanbanRouter = Backbone.Router.extend({
     	initialize: function(){
             console.log('Kanban Router Initialized!');
     		
-            this.projects = new projects();
+            //Global space for collections
+            Backbone.c = {};
+
+            Backbone.c.projects = new projects();
+            Backbone.c.issues = new issues();
+            Backbone.c.users = new users();
+            Backbone.c.times = new times();
 
             //Starting history!!! DO THIS AFTER INITIALIZATION
             Backbone.history.start();
@@ -29,7 +38,7 @@ define([
         },
 
         usersIssues: function(){
-        	this.changePage(new userIssues({collection: this.projects}));
+        	this.changePage(new userIssues());
         },
 
         projectsIssues: function(){
@@ -45,7 +54,7 @@ define([
                 this.currentView.destroy();
 
             //Render our new view
-            view.setElement($('body')).render();
+            view.setElement($('main')).render();
         }
     });
 

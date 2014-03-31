@@ -25,6 +25,7 @@ require.config({
         jquery: '../bower_components/jquery/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/underscore/underscore',
+        bscollapse: '../bower_components/bootstrap/js/collapse',
     }
 });
 
@@ -32,8 +33,12 @@ require([
     'jquery',
     'backbone',
     'routes/kanban',
-], function ( $, Backbone, Kanban ) {
+], function ( $, Backbone, Kanban) {
     
+    require(['jquery', 'bscollapse'], function(jQuery, collapse){
+
+    });
+
     $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
         options.url += '.json';
         options.crossDomain = true;

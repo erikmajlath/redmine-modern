@@ -1,8 +1,32 @@
-body {
-    background: #fafafa;
+.boardContainer{
+	position: relative;
+	height: 400px;
+}
+.board{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+
+.bor{
+	border: 1px solid black;
+	width: 150px;
+	height: 100px;
+	float: left;
+}
+
+.listWrap{
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.list{
+	width: 1000px;
 }
