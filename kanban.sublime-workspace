@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"no",
+				"nowrap"
+			],
+			[
 				"curre",
 				"currentView"
 			],
@@ -80,26 +84,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/scripts/routes/kanban.js",
-			"settings":
-			{
-				"buffer_size": 1287,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/main.js",
-			"settings":
-			{
-				"buffer_size": 1013,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/scripts/templates/usersIssues.ejs",
 			"settings":
 			{
-				"buffer_size": 109,
+				"buffer_size": 226,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/routes/kanban.js",
+			"settings":
+			{
+				"buffer_size": 1571,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,7 +103,7 @@
 			"file": "app/scripts/views/usersIssues.js",
 			"settings":
 			{
-				"buffer_size": 1054,
+				"buffer_size": 1108,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,15 +111,23 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 1946,
+				"buffer_size": 4475,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/collections/projects.js",
+			"file": "app/scripts/main.js",
 			"settings":
 			{
-				"buffer_size": 542,
+				"buffer_size": 1153,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/styles/main.css",
+			"settings":
+			{
+				"buffer_size": 353,
 				"line_ending": "Unix"
 			}
 		}
@@ -135,7 +139,7 @@
 		"selected_items":
 		[
 		],
-		"width": 467.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -155,15 +159,21 @@
 	},
 	"file_history":
 	[
-		"/home/erik/Documents/js/kanban/bower.json",
+		"/home/erik/Documents/js/kanban/.git/COMMIT_EDITMSG",
+		"/home/erik/.bashrc",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
 		"/home/erik/Documents/js/kanban/app/scripts/main.js",
+		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
+		"/home/erik/Documents/js/kanban/bower.json",
 		"/home/erik/Documents/js/kanban/app/scripts/models/project.js",
 		"/home/erik/Documents/js/kanban/app/scripts/views/usersIssues.js",
 		"/home/erik/Documents/js/kanban/app/index.html",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/usersIssues.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/projectsIssues.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/projectsIssues.js",
-		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
 		"/home/erik/Documents/js/kanban/node_modules/bower/node_modules/update-notifier/node_modules/request/index.js",
 		"/home/erik/Documents/js/kanban/node_modules/bower/lib/commands/uninstall.js",
 		"/home/erik/Documents/js/kanban/app/bower_components/modernizr/feature-detects/unicode.js",
@@ -171,11 +181,9 @@
 		"/home/erik/Documents/js/kanban/app/bower_components/underscore/underscore.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/project-template.mustache",
 		"/home/erik/Documents/js/kanban/app/scripts/views/project.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
 		"/etc/default/rcS",
 		"/home/erik/Documents/ruby/redmine/plugins/bbapi/init.rb",
 		"/home/erik/Documents/ruby/redmine/config/database.yml",
-		"/home/erik/.bashrc",
 		"/home/erik/Documents/ruby/redmine/log/development.log",
 		"/home/erik/Documents/ruby/redmine/log/production.log",
 		"/home/erik/Documents/ruby/redmine/database.yml",
@@ -279,84 +287,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/scripts/routes/kanban.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1221,
-								1221
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/scripts/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1013,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								975,
-								975
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "app/scripts/templates/usersIssues.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 109,
+						"buffer_size": 226,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								106,
-								106
+								226,
+								226
 							]
 						],
 						"settings":
@@ -371,20 +319,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/scripts/views/usersIssues.js",
+					"buffer": 1,
+					"file": "app/scripts/routes/kanban.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1054,
+						"buffer_size": 1571,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								164,
+								164
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/scripts/views/usersIssues.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								623,
+								623
 							]
 						],
 						"settings":
@@ -394,27 +372,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": -0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "app/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1946,
+						"buffer_size": 4475,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								797,
-								797
+								738,
+								738
 							]
 						],
 						"settings":
@@ -427,24 +405,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/scripts/collections/projects.js",
+					"buffer": 4,
+					"file": "app/scripts/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 542,
+						"buffer_size": 1153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								144,
-								144
+								715,
+								715
 							]
 						],
 						"settings":
@@ -454,10 +432,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/styles/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 353,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
