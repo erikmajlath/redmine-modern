@@ -3,6 +3,7 @@
 
 //development debuggins purpose
 var dev = {
+    
     c: {},
     v: {},
 };
@@ -19,12 +20,15 @@ require.config({
                 'jquery'
             ],
             exports: 'Backbone'
-        }
+        },
+        relational: {
+            deps: ['backbone'],
+        },
     },
     paths: {
         jquery: '../bower_components/jquery/jquery',
         backbone: '../bower_components/backbone/backbone',
-        bbrelational: '../bower_components/backbone-relational/backbone-relational',
+        relational: '../bower_components/backbone-relational/backbone-relational',
         underscore: '../bower_components/underscore/underscore',
         bscollapse: '../bower_components/bootstrap/js/collapse',
     }
@@ -36,7 +40,7 @@ require([
     'routes/kanban',
 ], function ( $, Backbone, Kanban) {
     
-    require(['jquery', 'bscollapse'], function(jQuery, collapse){
+    require(['bscollapse'], function(collapse){
 
     });
 

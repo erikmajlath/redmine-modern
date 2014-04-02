@@ -9,20 +9,32 @@ define([
     'collections/issues',
     'collections/users',
     'collections/times',
-], function ($, Backbone, userIssues, projectsIssues, projects, issues, users, times) {
+], function ($, Backbone,userIssues, projectsIssues, projects, issues, users, times) {
     'use strict';
 
     var KanbanRouter = Backbone.Router.extend({
     	initialize: function(){
             console.log('Kanban Router Initialized!');
     		
+            //Global dispatcher! Carefuly!!! Very dangerous in future
+            Backbone.dispatcher = _.clone(Backbone.Events);
+
+            //For dev purposes
+            this.listenTo(Backbone.dispatcher, 'all', this.showEvent); 
+
             //Global space for collections
             Backbone.c = {};
 
             Backbone.c.projects = new projects();
-            Backbone.c.issues = new issues();
             Backbone.c.users = new users();
+            Backbone.c.issues = new issues();
             Backbone.c.times = new times();
+
+            //Fetch all
+            Backbone.c.projects.fetch();
+            Backbone.c.users.fetch();
+            Backbone.c.issues.fetch();
+            Backbone.c.times.fetch();
 
             //Starting history!!! DO THIS AFTER INITIALIZATION
             Backbone.history.start();
@@ -55,7 +67,11 @@ define([
 
             //Render our new view
             view.setElement($('main')).render();
-        }
+        },
+
+        showEvent: function(e,v){
+            console.log(e + v);
+        },
     });
 
     return KanbanRouter;

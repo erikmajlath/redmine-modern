@@ -14,11 +14,17 @@ define([
 
         initialize: function(){
         	dev.c.users = this;
-        	this.fetch();
+        	
+            this.on('sync', this.onReset);
         },
 
         parse: function(data){
         	return data.users;
+        },
+
+        onReset: function(){
+            //Tell applicaiton that this has been fetched
+            Backbone.dispatcher.trigger('fetchComplete', 'users');
         },
     });
 

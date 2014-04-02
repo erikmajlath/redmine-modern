@@ -2,11 +2,13 @@
 
 define([
     'underscore',
-    'backbone'
-], function (_, Backbone) {
+    'backbone',
+    'relational',
+], function (_, Backbone, Relational) {
     'use strict';
 
-    var UserModel = Backbone.Model.extend({
+    var UserModel = Backbone.RelationalModel.extend({
+
         defaults: {
         }
     });

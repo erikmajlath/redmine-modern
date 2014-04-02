@@ -16,12 +16,18 @@ define([
 
         initialize: function(){
         	dev.c.projects = this;
-            this.fetch();
+            
+            this.on('sync', this.onReset);
         },
 
         parse: function(data){
             return data.projects;
-        }
+        },
+
+        onReset: function(e){
+            //Tell applicaiton that this has been fetched
+            Backbone.dispatcher.trigger('fetchComplete', 'projects');
+        },
     });
 
     return ProjectsCollection;

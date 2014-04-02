@@ -14,12 +14,38 @@ define([
 
         initialize: function(){
         	dev.c.times = this;
-        	this.fetch();
+        	
+            this.on('sync', this.onReset);
+            this.listenTo(Backbone.dispatcher, 'fetchComplete', this.relationDependencies);
+
+            //Those thing gotta be fethced before making relations
+            this.dep = {
+                projects: false,
+                users: false,
+                issues: false,
+                times: false,
+            }
         },
 
         parse: function(data){
         	return data.time_entries;
         },
+
+        onReset: function(){
+            //Tell applicaiton that this has been fetched
+            Backbone.dispatcher.trigger('fetchComplete', 'times');
+        },
+
+        relationDependencies: function(thing){
+            this.dep[thing] = true;
+
+            if(this.dep.projects && this.dep.users && this.dep.issues && this.dep.times){
+                this.each(function(item){
+                    item.makeRelations();
+                });
+            }
+        },
+
     });
 
     return TimesCollection;
