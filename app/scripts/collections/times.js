@@ -43,6 +43,8 @@ define([
                 this.each(function(item){
                     item.makeRelations();
                 });
+
+                Backbone.dispatcher.trigger('relationsComplete', 'times');
             }
         },
 

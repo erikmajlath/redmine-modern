@@ -8,8 +8,8 @@ define([
 ], function ($, _, Backbone, JST) {
     'use strict';
 
-    var ProjectsissuesView = Backbone.View.extend({
-        template: JST['app/scripts/templates/projectsIssues.ejs'],
+    var BoardProjectsView = Backbone.View.extend({
+        template: JST['app/scripts/templates/boardProjects.ejs'],
 
         initialize: function(){
         	console.log('Projects & Issues view initialized!');
@@ -26,5 +26,5 @@ define([
         },
     });
 
-    return ProjectsissuesView;
+    return BoardProjectsView;
 });

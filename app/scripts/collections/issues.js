@@ -23,6 +23,9 @@ define([
                 projects: false,
                 users: false,
                 issues: false,
+                issueStatuses: false,
+                issuePriorities: false,
+                trackers: false,
             }
         },
 
@@ -38,10 +41,12 @@ define([
         relationDependencies: function(thing){
             this.dep[thing] = true;
 
-            if(this.dep.projects && this.dep.users && this.dep.issues){
+            if(_(this.dep).chain().values().indexOf(false).value() == -1){
                 this.each(function(item){
                     item.makeRelations();
                 });
+
+                Backbone.dispatcher.trigger('relationsComplete', 'issues');
             }
         },
     });

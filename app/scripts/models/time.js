@@ -16,7 +16,7 @@ define([
     		//Issue - Time Entry relation
     		{
     			type: 'HasOne',
-    			key: 'issueModel',
+    			key: 'issue_id',
     			relatedModel: IssueModel,
     			includeInJSON: false,
     			reverseRelation: {
@@ -28,7 +28,7 @@ define([
     		//Project - Time Entry relation
     		{
     			type: 'HasOne',
-    			key: 'projectModel',
+    			key: 'project_id',
     			relatedModel: ProjectModel,
     			includeInJSON: false,
     			reverseRelation: {
@@ -40,7 +40,7 @@ define([
     		//User - Time Entry relation
     		{
     			type: 'HasOne',
-    			key: 'userModel',
+    			key: 'user_id',
     			relatedModel: UserModel,
     			includeInJSON: false,
     			reverseRelation: {
