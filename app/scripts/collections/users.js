@@ -16,6 +16,11 @@ define([
         	dev.c.users = this;
         	
             this.on('sync', this.onReset);
+            this.listenTo(Backbone.dispatcher, 'fetchComplete', this.relationDependencies);
+            
+            this.dep = {
+                projects: false,
+            }
         },
 
         parse: function(data){
@@ -25,6 +30,18 @@ define([
         onReset: function(){
             //Tell applicaiton that this has been fetched
             Backbone.dispatcher.trigger('fetchComplete', 'users');
+        },
+
+        relationDependencies: function(thing){
+            this.dep[thing] = true;
+
+            if(_(this.dep).chain().values().indexOf(false).value() == -1){
+                this.each(function(item){
+                    item.makeRelations();
+                });
+
+                Backbone.dispatcher.trigger('relationsComplete', 'users');
+            }
         },
     });
 

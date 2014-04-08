@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"toggle",
+				"toggleDescription"
+			],
+			[
+				"change",
+				"changeDescription"
+			],
+			[
+				"hide",
+				"hideIssueInput"
+			],
+			[
+				"ren",
+				"renderIssues"
+			],
+			[
+				"prio",
+				"priority_id"
+			],
+			[
+				"subj",
+				"subjectEdit"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"issue",
+				"issuePriorities"
+			],
+			[
+				"issu",
+				"issuePriorities"
+			],
+			[
+				"iss",
+				"issuePriorities"
+			],
+			[
+				"relate",
+				"relatedModel"
+			],
+			[
+				"Has",
+				"HasOne"
+			],
+			[
 				"assi",
 				"assigned_to_id"
 			],
@@ -26,10 +82,6 @@
 			[
 				"cure",
 				"currentView"
-			],
-			[
-				"font-",
-				"font-weight"
 			],
 			[
 				"Is",
@@ -136,42 +188,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/scripts/views/issueInUser.js",
+			"file": "app/styles/main.css",
 			"settings":
 			{
-				"buffer_size": 947,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/main.js",
-			"settings":
-			{
-				"buffer_size": 2163,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/routes/kanban.js",
-			"settings":
-			{
-				"buffer_size": 2490,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/models/issue.js",
-			"settings":
-			{
-				"buffer_size": 2302,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/views/issueInUserDetail.js",
-			"settings":
-			{
-				"buffer_size": 1991,
+				"buffer_size": 1763,
 				"line_ending": "Unix"
 			}
 		},
@@ -179,15 +199,31 @@
 			"file": "app/scripts/templates/issueInUserDetail.ejs",
 			"settings":
 			{
-				"buffer_size": 2711,
+				"buffer_size": 2758,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/styles/main.css",
+			"file": "app/scripts/views/issueInUserDetail.js",
 			"settings":
 			{
-				"buffer_size": 1012,
+				"buffer_size": 4179,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 3309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/collections/issues.js",
+			"settings":
+			{
+				"buffer_size": 1438,
 				"line_ending": "Unix"
 			}
 		}
@@ -219,29 +255,36 @@
 	},
 	"file_history":
 	[
-		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
+		"/home/erik/Documents/js/kanban/app/scripts/views/userWithIssues.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/userWithIssues.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/main.js",
 		"/home/erik/Documents/js/kanban/app/scripts/views/boardUsers.js",
-		"/home/erik/Documents/js/kanban/app/index.html",
+		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/user.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
+		"/home/erik/Documents/js/kanban/app/styles/main.css",
 		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
-		"/home/erik/Documents/js/kanban/app/scripts/main.js",
+		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUser.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issuePriorities.js",
+		"/home/erik/Documents/js/kanban/app/index.html",
+		"/home/erik/Documents/js/kanban/app/scripts/models/issuePriority.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/trackers.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issueStatuses.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/issueStatus.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/tracker.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/boardProjects.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/boardProjects.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/modalContainer.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/views/userWithIssues.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/userWithIssues.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/usersIssues.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/usersIssues.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
-		"/home/erik/Documents/js/kanban/app/scripts/models/user.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/project.js",
-		"/home/erik/Documents/js/kanban/app/styles/main.css",
 		"/home/erik/Documents/js/kanban/.gitignore",
 		"/home/erik/Documents/js/kanban/.git/COMMIT_EDITMSG",
 		"/home/erik/.bashrc",
@@ -362,144 +405,82 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/scripts/views/issueInUser.js",
+					"file": "app/styles/main.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 947,
+						"buffer_size": 1763,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								352,
-								352
+								1297,
+								1297
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 44.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/scripts/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1688,
-								1688
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 826.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/scripts/routes/kanban.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								331,
-								331
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 204.0,
+						"translation.y": 1173.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/scripts/models/issue.js",
+					"buffer": 1,
+					"file": "app/scripts/templates/issueInUserDetail.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2302,
+						"buffer_size": 2758,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1800,
-								1800
+								2448,
+								2448
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 911.0,
+						"translation.y": 1186.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "app/scripts/views/issueInUserDetail.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1991,
+						"buffer_size": 4179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1334,
-								1334
+								3703,
+								3703
 							]
 						],
 						"settings":
@@ -509,33 +490,34 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 561.0,
+						"translation.y": 1020.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/scripts/templates/issueInUserDetail.ejs",
+					"buffer": 3,
+					"file": "app/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2711,
+						"buffer_size": 3309,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1375,
-								1375
+								1037,
+								1037
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -545,32 +527,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/styles/main.css",
+					"buffer": 4,
+					"file": "app/scripts/collections/issues.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1012,
+						"buffer_size": 1438,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								42,
-								42
+								732,
+								732
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 153.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

@@ -10,7 +10,8 @@
     "modernizr": "~2.6.2",
     "bootstrap": "~3.1.1",
     "backbone-relational": "~0.8.7",
-    "iscroll": "~5.1.1"
+    "iscroll": "~5.1.1",
+    "datejs": "*"
   },
   "devDependencies": {}
 }

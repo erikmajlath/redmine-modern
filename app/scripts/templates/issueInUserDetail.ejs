@@ -1,55 +1,90 @@
 <!-- Modal -->
-<div class="modal fade" id="issueDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade issueDetail" id="issueDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <div class="detailHeader"><%= subject%></div>
-      </div>
-			<div class="modal-body">
-				<div class="form-group">
-					<label>Tracker</label>
-					<select class="form-control" name="tracker_id">
+		<div class="modal-header">
+			<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+			<div class="clearfix">
+				<span class="glyphicon glyphicon-remove pull-right pointer" data-dismiss="modal"></span>
+				<div class="subjectWrap">
+					<div class="subject edit"><%= subject%>
+					</div>
+					<div class="subjectInputWrap" style="display:none">
+						<input type="text" class="form-control subjectInput" value="<%= subject%>">
+						<button class="btn btn-primary submitSubject">Save</button>
+						<button class="btn btn-danger closeSubject">Leave</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="trackerWrap wrap">
+				<div class="dropdown-toggle tracker editTracker edit" data-toggle="dropdown">
+					<span class="trackerText"><%= tracker_id.name%></span> <span class="caret"></span>
+				</div>
+				<ul class="dropdown-menu" role="menu">
+
 					<% 
 						_(trackers).each(function(item){
 							%>
-								<option value="<%= item.id%>" <% if( typeof tracker.id != 'undefined' && tracker.id==item.id)print('selected'); %>>
-								<%= item.name %>	
-								</option>
+								<li>
+								<a class="changeTracker" value="<%= item.id %>"><%= item.name %></a>
+								</li>
+									
 							<%
 						})
 					%>
-					</select>
+				</ul>
+			</div>
+
+			<div class="statusWrap wrap">
+				<div class="dropdown-toggle status editStatus edit" data-toggle="dropdown"><%= status_id.name%> <span class="caret"></span>
 				</div>
-				<div class="form-group">
-					<label>Status</label>
-					<select class="form-control" name="status_id">
-						<% 
-							_(issueStatuses).each(function(item){
-								%>
-									<option value="<%= item.id%>" <% if( typeof status.id != 'undefined' && status.id==item.id)print('selected'); %>>
-									<%= item.name %>	
-									</option>
-								<%
-							})
-						%>
-					</select>
+				<ul class="dropdown-menu" role="menu">
+
+					<% 
+						_(issueStatuses).each(function(item){
+							%>
+								<li>
+								<a class="changeStatus" value="<%= item.id %>"><%= item.name %></a>
+								</li>
+									
+							<%
+						})
+					%>
+				</ul>
+			</div>
+
+			<div class="priorityWrap wrap">
+				<div class="dropdown-toggle priority editPriority edit" data-toggle="dropdown"><%= priority_id.name%> <span class="caret"></span> 
 				</div>
-				<div class="form-group">
-					<label>Priority</label>
-					<select class="form-control" name="priority_id">
+				<ul class="dropdown-menu" role="menu">
+
 						<% 
-							_(issuePriorities).each(function(item){
-								%>
-									<option value="<%= item.id%>" <% if( typeof priority.id != 'undefined' && priority.id==item.id)print('selected'); %>>
-									<%= item.name %>	
-									</option>
-								<%
-							})
-						%>
-					</select>
+						_(issuePriorities).each(function(item){
+							%>
+								<li>
+								<a class="changePriority" value="<%= item.id %>"><%= item.name %></a>
+								</li>
+									
+							<%
+						})
+					%>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="modal-body clearfix">
+
+			<div class="descriptionWrap">
+				<a class="changeDescription"><span class="glyphicon glyphicon-pencil"></span> Edit issue description</a>
+				<div class="descriptionInputWrap" style="display:none">
+					<textarea class="form-control descriptionInput" rows="3"><%= description%></textarea>
+					<button class="btn btn-primary submitDescription">Save</button>
+					<button class="btn btn-danger closeDescription">Leave</button>
 				</div>
 			</div>
+		</div>
     </div>
   </div>
 </div>

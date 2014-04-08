@@ -12,10 +12,26 @@ define([
         template: JST['app/scripts/templates/issueInUserDetail.ejs'],
 
         events: {
+            'click .subject': 'editSubject',
+            'click .closeSubject': 'toggleSubject',
+            'click .submitSubject': 'submitSubject',
+            'click .changeTracker': 'changeTracker',
+            'click .changeStatus': 'changeStatus',
+            'click .changePriority': 'changePriority',
+            'click .changeDescription': 'changeDescription',
+            'click .closeDescription': 'toggleDescription',
+            'click .submitDescription': 'submitDescription',
         },
 
         initialize: function(){
         	console.log('Issue In User Detail initialzed!');
+
+            //Listen to change events
+            this.listenTo(this.model, 'change:subject', this.renderSubject);
+            this.listenTo(this.model, 'change:tracker_id', this.renderTracker);
+            this.listenTo(this.model, 'change:status_id', this.renderStatus);
+            this.listenTo(this.model, 'change:priority_id', this.renderPriority);
+
             this.render();
         },
 
@@ -50,32 +66,69 @@ define([
         	this.remove();
         },
 
-/*
-        submit: function(e){
-            console.log('SUBMIT');
-            e.preventDefault();
-            var data = this.serialize();
-            this.model.save(data);
+        editSubject: function(){
+            this.toggleSubject();
+            this.$('.subjectInput').focus();
 
-            this.closeModal();
         },
 
-        serialize: function(){
-            var o = {};
-            var a = this.$('.issueDetailForm').serializeArray();
-            $.each(a, function() {
-                if (o[this.name] !== undefined) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                    }
-                    o[this.name].push(this.value || '');
-                } else {
-                    o[this.name] = this.value || '';
-                }
-            });
-            return o;
-        },*/
+        toggleSubject: function(){
+            this.$('.subject').toggle();
+            this.$('.subjectInputWrap').toggle();
+        },
 
+        submitSubject: function(){
+            this.toggleSubject();
+            var input = this.$('.subjectInput').val();
+            this.model.save('subject', input);
+        },
+
+        renderSubject: function(){
+            this.$('.subject').show().html(this.model.get('subject'));
+        },
+
+        changeTracker: function(e){
+            var value = $(e.target).attr('value')
+            this.model.save('tracker_id', value);
+        },
+
+        renderTracker: function(){
+            this.$('.trackerText').html(this.model.get('tracker_id').get('name'));
+        },
+
+        changeStatus: function(e){
+            var value = $(e.target).attr('value')
+            this.model.save('status_id', value);
+        },
+
+        renderStatus: function(){
+            this.$('.status').html(this.model.get('status_id').get('name'));
+        },
+
+        changePriority: function(e){
+            var value = $(e.target).attr('value')
+            this.model.save('priority_id', value);
+        },
+
+        renderPriority: function(){
+            this.$('.priority').html(this.model.get('priority_id').get('name'));
+        },
+
+        toggleDescription: function(){
+            this.$('.changeDescription').toggle();
+            this.$('.descriptionInputWrap').toggle();
+        },
+
+        changeDescription: function(){
+            this.toggleDescription();
+            this.$('.descriptionInput').focus();
+        },
+
+        submitDescription: function(){
+            this.toggleDescription();
+            var input = this.$('.descriptionInput').val();
+            this.model.save('description', input);
+        },
         
     });
 

@@ -20,12 +20,14 @@ define([
 
         initialize: function(){
         	console.log('IssueInUser initialized!');
+
+            this.listenTo(this.model, 'change', this.render);
         },
 
         render: function(){
         	console.log('IssueInUser rendered!');
 
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template(this.model.templateJSON()));
             return this;
         },
 

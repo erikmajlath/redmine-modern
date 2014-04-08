@@ -14,8 +14,16 @@ define([
 
         className: 'userWithIssues',
 
+        events: {
+            'click .addIssue': 'showIssueInput',
+            'click .issueSubmit': 'createIssue',
+            'click .issueInputClose': 'hideIssueInput',
+        },
+
         initialize: function(){
         	console.log('UserWithIssues initialized!');
+
+            this.listenTo(this.model.get('issues'), 'add', this.renderIssues);
 
             this.children = _([]);
         },
@@ -29,6 +37,10 @@ define([
         },
 
         renderIssues: function(){
+
+            //Memory leak
+            //Destroy issues before rendering if any in children
+
             var fragment = $(document.createDocumentFragment());
 
             this.model.get('issues').each(function(item){
@@ -48,6 +60,22 @@ define([
             })
 
             this.remove();
+        },
+
+        hideIssueInput: function(){
+            this.$('.addIssue').show();
+            this.$('.issueInputWrap').hide();
+        },
+
+        showIssueInput: function(){
+            this.$('.addIssue').hide();
+            this.$('.issueInputWrap').show();
+            this.$('.issueInput').focus();
+        },
+
+        createIssue: function(){
+            this.hideIssueInput();
+            Backbone.c.issues.create({subject: this.$('.issueInput').val(), assigned_to_id: this.model.get('id')});
         },
     });
 

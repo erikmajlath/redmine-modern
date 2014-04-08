@@ -18,7 +18,7 @@ define([
 
             this.collection = Backbone.c.users;
 
-            this.listenTo(Backbone.dispatcher, 'collectionsFetched', this.renderContent);
+            Backbone.dispatcher.once('collectionsFetched', this.renderContent, this);
             this.listenTo(Backbone.dispatcher, 'resize', this.windowResize);
 
             this.children = _([]);
@@ -55,6 +55,8 @@ define([
 
             //append element
             this.$('.list').html(fragment);
+
+            this.postRender();
         },
 
         postRender: function(){

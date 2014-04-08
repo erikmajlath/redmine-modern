@@ -6,6 +6,7 @@ var dev = {
     
     c: {},
     v: {},
+    r: {},
 };
 
 require.config({
@@ -24,6 +25,10 @@ require.config({
         relational: {
             deps: ['backbone'],
         },
+        date: {
+            deps: ['jquery'],
+            exports: 'Date',
+        },
     },
     paths: {
         jquery: '../bower_components/jquery/jquery',
@@ -32,6 +37,7 @@ require.config({
         underscore: '../bower_components/underscore/underscore',
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',        
         iscroll: '../bower_components/iscroll/build/iscroll',
+        date: '../bower_components/datejs/build/date',
     }
 });
 
@@ -40,16 +46,9 @@ require([
     'backbone',
     'routes/kanban',
 ], function ( $, Backbone, Kanban) {
-    /*
-    var oldSy = Backbone.sync;
-    Backbone.sync = function(method, model, options){
-        console.log(method);
-        console.log(model);
-        console.log(options);
-        oldSy(method, model, options);
-    }*/
 
-    //Triger resize event
+
+    //Resend events to Backbone dispatcher
     window.onresize = function() { Backbone.dispatcher.trigger('resize') };
 
     //Applying Bootstrap collapse
@@ -60,7 +59,6 @@ require([
     //Need to add .json to urls and change data structure
     //Also add header with redmine api key
     $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
-        console.log(options);
 
         options.url += '.json';
         options.crossDomain = true;

@@ -5,6 +5,9 @@ main{
 a{
 	cursor: pointer;
 }
+.pointer{
+	cursor: pointer;
+}
 /* END COMMON*/
 
 /* BOARD */
@@ -56,7 +59,17 @@ a{
 .userWithIssues .userFooter{
 	padding: 5px;
 }
+.userWithIssues .issueInput{
+	margin-bottom: 5px;
+}
+.userWithIssues .issueInputClose{
+	color: #666;
+	margin: 5px 10px 0 10px;
+	font-size: 1.5em;
+}
+/* END USSERWITHISSUES */
 
+/* ISSUEINUSER */
 .issueInUser{
 	margin: 2px;
 	border: 1px solid #ddd;
@@ -71,4 +84,38 @@ a{
 .issueInUser .issueBody{
 	padding: 0 2px;
 }
-/* END USSERWITHISSUES */
+/* END ISSUEINUSER */
+
+/* ISSUEINUSERDETAILS */
+.issueDetail .subject{
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+.issueDetail .subjectInput{
+	margin-bottom: 5px;
+}
+.issueDetail .subjectWrap{
+	margin-right: 30px;
+}
+.descriptionWrap{
+}
+.trackerWrap{
+}
+.issueDetail .wrap{
+	font-size: 1.2em;
+	color: #888;
+	font-weight: bold;
+	position: relative;
+	margin: 8px;
+}
+.issueDetail .glyphicon{
+	margin-right: 5px;
+}
+.issueDetail .edit{
+	display: inline-block;
+	cursor: pointer;
+}
+.issueDetail .descriptionInput{
+	margin-bottom: 5px;
+}
+/* END ISSUEINUSERDETAILS */

@@ -19,6 +19,8 @@ define([
     	initialize: function(){
             console.log('Kanban Router Initialized!');
 
+            dev.r.kanban = this;
+
             //Global dispatcher! Carefuly!!! Very dangerous in future
             Backbone.dispatcher = _.clone(Backbone.Events);
 
@@ -50,6 +52,8 @@ define([
 
             this.listenTo(Backbone.dispatcher, 'relationsComplete', this.relationsComplete);
 
+            //Models with relations
+            //Need to wait till fully loaded and raltioned
             this.relations = {
                 issues: false,
                 times: false,
@@ -63,7 +67,7 @@ define([
         },
 
         boardUsers: function(){
-        	this.changePage(new BoardUsersView());
+        	this.changePage(new BoardUsersView({collection: Backbone.c.users}));
         },
 
         boardProjects: function(){

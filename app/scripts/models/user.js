@@ -10,7 +10,15 @@ define([
     var UserModel = Backbone.RelationalModel.extend({
 
         defaults: {
-        }
+        },
+
+        relations: [
+
+        ],
+
+        makeRelations: function(){
+        	
+        },
     });
 
     return UserModel;

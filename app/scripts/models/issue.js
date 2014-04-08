@@ -10,6 +10,7 @@ define([
     'models/tracker',
     'collections/issues',
     'relational',
+    'date',
 ], function (_, Backbone, ProjectModel, UserModel, IssueStatusModel, IssuePriorityModel, TrackerModel, IssuesCollection) {
     'use strict';
 
@@ -68,6 +69,18 @@ define([
     	},
 
         defaults: {
+            subject: '',
+            project_id: 2,
+            tracker_id: 1,
+            status_id: 1,
+            priority_id: 1,
+            description: '',
+            start_date: Date.today().toString('yyyy-MM-dd'),
+        },
+
+        parse: function(data){
+            if(data.issue) return data.issue;
+            return data;
         },
 
         //too dependant :(
