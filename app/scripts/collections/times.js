@@ -24,6 +24,7 @@ define([
                 users: false,
                 issues: false,
                 times: false,
+                timeActivities: false,
             }
         },
 
@@ -39,7 +40,7 @@ define([
         relationDependencies: function(thing){
             this.dep[thing] = true;
 
-            if(this.dep.projects && this.dep.users && this.dep.issues && this.dep.times){
+            if(_(this.dep).chain().values().indexOf(false).value() == -1){
                 this.each(function(item){
                     item.makeRelations();
                 });

@@ -12,7 +12,8 @@ define([
     'collections/trackers',
     'collections/issueStatuses',
     'collections/issuePriorities',
-], function ($, Backbone, BoardUsersView, BoardProjectsView, projects, issues, users, times, trackers, issueStatuses, issuePriorities) {
+    'collections/timeActivities',
+], function ($, Backbone, BoardUsersView, BoardProjectsView, projects, issues, users, times, trackers, issueStatuses, issuePriorities, timeActivities) {
     'use strict';
 
     var KanbanRouter = Backbone.Router.extend({
@@ -34,6 +35,7 @@ define([
             Backbone.c.trackers = new trackers();
             Backbone.c.issueStatuses = new issueStatuses();
             Backbone.c.issuePriorities = new issuePriorities();
+            Backbone.c.timeActivities = new timeActivities();
 
             //Store current view
             this.currentView = null;
@@ -49,6 +51,7 @@ define([
             Backbone.c.trackers.fetch();
             Backbone.c.issueStatuses.fetch();
             Backbone.c.issuePriorities.fetch();
+            Backbone.c.timeActivities.fetch();
 
             this.listenTo(Backbone.dispatcher, 'relationsComplete', this.relationsComplete);
 

@@ -29,6 +29,9 @@ require.config({
             deps: ['jquery'],
             exports: 'Date',
         },
+        datepicker: {
+            deps: ['jquery'],
+        },
     },
     paths: {
         jquery: '../bower_components/jquery/jquery',
@@ -38,6 +41,7 @@ require.config({
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',        
         iscroll: '../bower_components/iscroll/build/iscroll',
         date: '../bower_components/datejs/build/date',
+        datepicker: '../bower_components/bootstrap-datepicker/js/bootstrap-datepicker',
     }
 });
 

@@ -4,7 +4,9 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'templates'
+    'templates',
+    'date',
+    'datepicker',
 ], function ($, _, Backbone, JST) {
     'use strict';
 
@@ -12,15 +14,24 @@ define([
         template: JST['app/scripts/templates/issueInUserDetail.ejs'],
 
         events: {
+            //Subject editing
             'click .subject': 'editSubject',
             'click .closeSubject': 'toggleSubject',
             'click .submitSubject': 'submitSubject',
+            //Tracker editing
             'click .changeTracker': 'changeTracker',
+            //Status editing
             'click .changeStatus': 'changeStatus',
+            //Priority editing
             'click .changePriority': 'changePriority',
+            //Description Editing
             'click .changeDescription': 'changeDescription',
             'click .closeDescription': 'toggleDescription',
             'click .submitDescription': 'submitDescription',
+            //Time Activity addition
+            'click .addTime': 'addTime',
+            'click .closeTime': 'toggleTime',
+            'click .submitTime': 'submitTime',
         },
 
         initialize: function(){
@@ -43,6 +54,7 @@ define([
             data.trackers = Backbone.c.trackers.toJSON();
             data.issueStatuses = Backbone.c.issueStatuses.toJSON();
             data.issuePriorities = Backbone.c.issuePriorities.toJSON();
+            data.activities = Backbone.c.timeActivities.toJSON();
 
             this.$el.html(this.template(data));
         	$('body').append(this.$el);
@@ -51,6 +63,12 @@ define([
             //Also remove this when its completly hidden
             $('#issueDetail').modal().on('hidden.bs.modal', function () {
                 self.destroy();
+            });
+
+            //Attach datepicker
+            this.$('.dateInput').datepicker({
+                format: "yyyy-mm-dd",
+                autoclose: true,
             });
 
         	return this;
@@ -102,7 +120,7 @@ define([
         },
 
         renderStatus: function(){
-            this.$('.status').html(this.model.get('status_id').get('name'));
+            this.$('.statusText').html(this.model.get('status_id').get('name'));
         },
 
         changePriority: function(e){
@@ -111,7 +129,7 @@ define([
         },
 
         renderPriority: function(){
-            this.$('.priority').html(this.model.get('priority_id').get('name'));
+            this.$('.priorityText').html(this.model.get('priority_id').get('name'));
         },
 
         toggleDescription: function(){
@@ -130,6 +148,32 @@ define([
             this.model.save('description', input);
         },
         
+        toggleTime: function(){
+            this.$('.addTime').toggle();
+            this.$('.timeInputWrap').toggle();
+        },
+
+        addTime: function(){
+            this.toggleTime();
+            this.$('.hoursInput').focus();
+        },
+
+        submitTime: function(){
+            this.toggleTime();
+            var hours = $('.hoursInput').val();
+            var date = $('.dateInput').val();
+            var activity = $('.activityInput').val();
+
+            Backbone.c.times.create({
+                project_id: this.model.get('project_id'),
+                user_id: this.model.get('assigned_to_id'),
+                issue_id: this.model,
+                activity_id: activity,
+                hours: hours,
+                spent_on: date,
+            });
+        },
+
     });
 
     return IssueinuserdetailView;

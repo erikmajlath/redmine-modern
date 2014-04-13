@@ -2,86 +2,130 @@
 <div class="modal fade issueDetail" id="issueDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-header clearfix">
 			<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-			<div class="clearfix">
-				<span class="glyphicon glyphicon-remove pull-right pointer" data-dismiss="modal"></span>
-				<div class="subjectWrap">
-					<div class="subject edit"><%= subject%>
+
+			<span class="glyphicon glyphicon-remove pull-right pointer" style="z-index: 5" data-dismiss="modal"></span>
+
+			<div class="container-fluid">
+				<div class="row row-close">	
+					<div class="statusWrap wrap col-lg-4">
+						<div class="dropdown-toggle editStatus edit" data-toggle="dropdown">
+							<span class="statusText"><%= status_id.name%></span> <span class="caret"></span>
+						</div>
+						<ul class="dropdown-menu" role="menu">
+
+							<% 
+								_(issueStatuses).each(function(item){
+									%>
+										<li>
+										<a class="changeStatus" value="<%= item.id %>"><%= item.name %></a>
+										</li>
+											
+									<%
+								})
+							%>
+						</ul>
 					</div>
-					<div class="subjectInputWrap" style="display:none">
-						<input type="text" class="form-control subjectInput" value="<%= subject%>">
-						<button class="btn btn-primary submitSubject">Save</button>
-						<button class="btn btn-danger closeSubject">Leave</button>
+
+					<div class="priorityWrap wrap col-lg-4">
+						<div class="dropdown-toggle editPriority edit" data-toggle="dropdown">
+
+							<span class="priorityText"><%= priority_id.name%></span> <span class="caret"></span> 
+						</div>
+						<ul class="dropdown-menu" role="menu">
+
+								<% 
+								_(issuePriorities).each(function(item){
+									%>
+										<li>
+										<a class="changePriority" value="<%= item.id %>"><%= item.name %></a>
+										</li>
+											
+									<%
+								})
+							%>
+						</ul>
+					</div>
+
+					<div class="trackerWrap wrap col-lg-4">
+						<div class="dropdown-toggle editTracker edit" data-toggle="dropdown">
+							<span class="trackerText"><%= tracker_id.name%></span> <span class="caret"></span>
+						</div>
+						<ul class="dropdown-menu" role="menu">
+
+							<% 
+								_(trackers).each(function(item){
+									%>
+										<li>
+										<a class="changeTracker" value="<%= item.id %>"><%= item.name %></a>
+										</li>
+											
+									<%
+								})
+							%>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="subjectWrap col-lg-12">
+						<div class="subject edit"><%= subject%>
+						</div>
+						<div class="subjectInputWrap" style="display:none">
+							<div class="form-group">
+								<input type="text" class="form-control subjectInput" value="<%= subject%>">
+							</div>
+							<button class="btn btn-primary submitSubject">Save</button>
+							<button class="btn btn-danger closeSubject">Leave</button>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="trackerWrap wrap">
-				<div class="dropdown-toggle tracker editTracker edit" data-toggle="dropdown">
-					<span class="trackerText"><%= tracker_id.name%></span> <span class="caret"></span>
-				</div>
-				<ul class="dropdown-menu" role="menu">
-
-					<% 
-						_(trackers).each(function(item){
-							%>
-								<li>
-								<a class="changeTracker" value="<%= item.id %>"><%= item.name %></a>
-								</li>
-									
-							<%
-						})
-					%>
-				</ul>
-			</div>
-
-			<div class="statusWrap wrap">
-				<div class="dropdown-toggle status editStatus edit" data-toggle="dropdown"><%= status_id.name%> <span class="caret"></span>
-				</div>
-				<ul class="dropdown-menu" role="menu">
-
-					<% 
-						_(issueStatuses).each(function(item){
-							%>
-								<li>
-								<a class="changeStatus" value="<%= item.id %>"><%= item.name %></a>
-								</li>
-									
-							<%
-						})
-					%>
-				</ul>
-			</div>
-
-			<div class="priorityWrap wrap">
-				<div class="dropdown-toggle priority editPriority edit" data-toggle="dropdown"><%= priority_id.name%> <span class="caret"></span> 
-				</div>
-				<ul class="dropdown-menu" role="menu">
-
-						<% 
-						_(issuePriorities).each(function(item){
-							%>
-								<li>
-								<a class="changePriority" value="<%= item.id %>"><%= item.name %></a>
-								</li>
-									
-							<%
-						})
-					%>
-				</ul>
-			</div>
-
 		</div>
 
 		<div class="modal-body clearfix">
 
-			<div class="descriptionWrap">
-				<a class="changeDescription"><span class="glyphicon glyphicon-pencil"></span> Edit issue description</a>
-				<div class="descriptionInputWrap" style="display:none">
-					<textarea class="form-control descriptionInput" rows="3"><%= description%></textarea>
-					<button class="btn btn-primary submitDescription">Save</button>
-					<button class="btn btn-danger closeDescription">Leave</button>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="descriptionWrap col-lg-12">
+						<a class="changeDescription"><span class="glyphicon glyphicon-pencil"></span> Edit issue description</a>
+						<div class="descriptionInputWrap" style="display:none">
+							<div class="form-group">
+								<textarea class="form-control descriptionInput" rows="3"><%= description%></textarea>
+							</div>
+							<button class="btn btn-primary submitDescription">Save</button>
+							<button class="btn btn-danger closeDescription">Leave</button>
+						</div>
+					</div>
+
+					<div class="timeWrap col-lg-12">
+						<a class="addTime"> 
+							<span class="glyphicon glyphicon-plus"></span> Add time activity
+						</a>
+						<div class="timeInputWrap" style="display:none">
+							<div class="form-group">
+								<input type="text" class="form-control hoursInput" placeholder="Hours">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control dateInput" placeholder="Date" 
+								value="<%= Date.today().toString('yyyy-MM-dd') %>">
+							</div>
+							<div class="form-group">
+								<select class="form-control activityInput">
+								<%
+									_(activities).each(function(item){
+										%>
+										<option value="<%= item.id%>"><%= item.name %></option>
+										<%
+									})
+								%>
+								</select>
+							</div>
+							<button class="btn btn-primary submitTime">Save</button>
+							<button class="btn btn-danger closeTime">Leave</button>
+						</div> 
+					</div>
 				</div>
 			</div>
 		</div>

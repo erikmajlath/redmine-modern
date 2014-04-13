@@ -8,6 +8,9 @@ a{
 .pointer{
 	cursor: pointer;
 }
+.row-close{
+	margin-right: 0 !important;
+}
 /* END COMMON*/
 
 /* BOARD */
@@ -87,35 +90,28 @@ a{
 /* END ISSUEINUSER */
 
 /* ISSUEINUSERDETAILS */
+
 .issueDetail .subject{
 	font-size: 1.5em;
 	font-weight: bolder;
 }
-.issueDetail .subjectInput{
-	margin-bottom: 5px;
-}
 .issueDetail .subjectWrap{
-	margin-right: 30px;
+	margin: 5px 0;
 }
-.descriptionWrap{
+.issueDetail .descriptionWrap{
+	margin: 5px 0;
 }
-.trackerWrap{
+.issueDetail .timeWrap{
+	margin: 5px 0;
 }
 .issueDetail .wrap{
 	font-size: 1.2em;
-	color: #888;
-	font-weight: bold;
 	position: relative;
-	margin: 8px;
-}
-.issueDetail .glyphicon{
-	margin-right: 5px;
 }
 .issueDetail .edit{
-	display: inline-block;
 	cursor: pointer;
-}
-.issueDetail .descriptionInput{
-	margin-bottom: 5px;
+	/*Minimizing width*/
+	position: relative;
+	display: inline-block;
 }
 /* END ISSUEINUSERDETAILS */
