@@ -18,20 +18,28 @@ define([
             'click .subject': 'editSubject',
             'click .closeSubject': 'toggleSubject',
             'click .submitSubject': 'submitSubject',
+
             //Tracker editing
             'click .changeTracker': 'changeTracker',
+
             //Status editing
             'click .changeStatus': 'changeStatus',
+
             //Priority editing
             'click .changePriority': 'changePriority',
+
             //Description Editing
             'click .changeDescription': 'changeDescription',
             'click .closeDescription': 'toggleDescription',
             'click .submitDescription': 'submitDescription',
+
             //Time Activity addition
             'click .addTime': 'addTime',
             'click .closeTime': 'toggleTime',
             'click .submitTime': 'submitTime',
+
+            //Due Date editing
+            'click .pickDueDate': 'pickDueDate',
         },
 
         initialize: function(){
@@ -42,6 +50,7 @@ define([
             this.listenTo(this.model, 'change:tracker_id', this.renderTracker);
             this.listenTo(this.model, 'change:status_id', this.renderStatus);
             this.listenTo(this.model, 'change:priority_id', this.renderPriority);
+            this.listenTo(this.model, 'change:due_date', this.renderDueDate);
 
             this.render();
         },
@@ -65,8 +74,14 @@ define([
                 self.destroy();
             });
 
-            //Attach datepicker
-            this.$('.dateInput').datepicker({
+            //Attach datepicker for Time
+            this.$('.timeDateInput').datepicker({
+                format: "yyyy-mm-dd",
+                autoclose: true,
+            });
+
+            //Attach datepicker for Due Date
+            this.$('.dueDateInput').datepicker({
                 format: "yyyy-mm-dd",
                 autoclose: true,
             });
@@ -155,14 +170,14 @@ define([
 
         addTime: function(){
             this.toggleTime();
-            this.$('.hoursInput').focus();
+            this.$('.timeHoursInput').focus();
         },
 
         submitTime: function(){
             this.toggleTime();
-            var hours = $('.hoursInput').val();
-            var date = $('.dateInput').val();
-            var activity = $('.activityInput').val();
+            var hours = $('.timeHoursInput').val();
+            var date = $('.timeDateInput').val();
+            var activity = $('.timeActivityInput').val();
 
             Backbone.c.times.create({
                 project_id: this.model.get('project_id'),
@@ -172,6 +187,19 @@ define([
                 hours: hours,
                 spent_on: date,
             });
+        },
+
+        pickDueDate: function(){
+            var input = this.$('.dueDateInput');
+            var that = this;
+
+            input.datepicker('show').on('changeDate', function(){
+                that.model.save('due_date', input.val());
+            });
+        },
+
+        renderDueDate: function(){
+            this.$('.dueDateText').html(this.model.get('due_date'));
         },
 
     });

@@ -46,9 +46,7 @@ a{
 	width: 250px;
 	float: left;
 	margin: 0 5px;
-	background-color: #F5F5F5;
-	border: 1px solid #E3E3E3;
-	border-radius: 0;
+	background-color: #7F8C8D;
 	min-height: 20px;
 }
 .userWithIssues .userHeader{
@@ -57,10 +55,15 @@ a{
 	padding: 5px;
 }
 .userWithIssues .userList{
-	padding: 5px;
+	
 }
 .userWithIssues .userFooter{
 	padding: 5px;
+}
+.userWithIssues .addIssueIcon{
+	width: 25px;
+	height: 25px;
+	font-size: 1.5em;
 }
 .userWithIssues .issueInput{
 	margin-bottom: 5px;
@@ -74,16 +77,23 @@ a{
 
 /* ISSUEINUSER */
 .issueInUser{
-	margin: 2px;
-	border: 1px solid #ddd;
-	background-color: white;
+	background-color: #BDC3C7;
+	width: 100%;
+	margin-bottom: 10px;
 }
+
 .issueInUser .issueHeader{
-	background-color: #3FB618;
-	color: white;
-	font-weight: bold;
-	padding: 0 2px;
+	
 }
+
+.issueInUser .issuePriority{
+	height: 8px;
+}
+
+.issueInUser .issueStatus{
+	height: 8px;
+}
+
 .issueInUser .issueBody{
 	padding: 0 2px;
 }
@@ -113,5 +123,19 @@ a{
 	/*Minimizing width*/
 	position: relative;
 	display: inline-block;
+}
+.issueDetail .detailLabel{
+	float: left;
+}
+.issueDetail .dueDateWrap{
+	margin: 5px 0;
+}
+.issueDetail .dueDateInput{
+	visibility: hidden !important;
+	width: 0;
+	height: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
 }
 /* END ISSUEINUSERDETAILS */

@@ -1,2 +1,46 @@
-<div class="issueHeader"><%= subject%></div>
-<div class="issueBody"><%= description%></div>
+<div class="issueWrap">
+	<div class="issueHeader">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-5">
+					<div class="issuePriority"  
+						style="background-color:<%= priority_id.color %>;
+							   opacity:<%= priority_id.opacity %>">
+					</div>
+				</div>
+				<div class="col-xs-5">
+					<div class="issueStatus"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="issueBody">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<span class="glyphicon glyphicon-fire"></span> [<%= project_id.name%>] <%= subject %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="issueFooter">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<span class="issueTime pull-left"><%= spent_time %> / <%= estimated_hours %> h</span>
+					<span class="issueDate pull-right">
+						<% if(typeof start_date != 'undefined')
+							print(Date.parse(start_date).toString('dd.MM')) %> - 
+						<% if(typeof due_date != 'undefined'){ 
+								print(Date.parse(due_date).toString('dd.MM.yyyy'))
+							}else{
+								print('Future');
+							} %>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

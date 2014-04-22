@@ -98,21 +98,24 @@
 							<button class="btn btn-danger closeDescription">Leave</button>
 						</div>
 					</div>
+				</div>
 
+
+				<div class="row">
 					<div class="timeWrap col-lg-12">
 						<a class="addTime"> 
 							<span class="glyphicon glyphicon-plus"></span> Add time activity
 						</a>
 						<div class="timeInputWrap" style="display:none">
 							<div class="form-group">
-								<input type="text" class="form-control hoursInput" placeholder="Hours">
+								<input type="text" class="form-control timeHoursInput" placeholder="Hours">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control dateInput" placeholder="Date" 
+								<input type="text" class="form-control timeDateInput" placeholder="Date" 
 								value="<%= Date.today().toString('yyyy-MM-dd') %>">
 							</div>
 							<div class="form-group">
-								<select class="form-control activityInput">
+								<select class="form-control timeActivityInput">
 								<%
 									_(activities).each(function(item){
 										%>
@@ -125,6 +128,56 @@
 							<button class="btn btn-primary submitTime">Save</button>
 							<button class="btn btn-danger closeTime">Leave</button>
 						</div> 
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="dueDateWrap col-lg-12">
+						<div class="row">
+							<div class="detailLabel col-lg-3">
+								<span class="glyphicon glyphicon-time"></span> Due date
+							</div>
+							<div class="pickDueDateWrap">
+								<span class="pickDueDate pointer">
+									<span class="dueDateText">
+										<% if(typeof due_date!='undefined'){
+												print(due_date);
+											}else{
+												print('Select');
+											}
+											%>
+									</span>
+									<input type="text" class="dueDateInput">
+									<span class="caret"></span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="projectWrap col-lg-12">
+						<div class="row">
+							<div class="detailLabel col-lg-3">
+								<span class="glyphicon glyphicon-briefcase"></span> Project
+							</div>
+							<span class="projectText"><%= project.name %></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="timeSpentWrap col-lg-12">
+						<div class="row">
+							<div class="detailLabel col-lg-3">
+								<span class="glyphicon glyphicon-ok-circle"></span> Spent time
+							</div>
+							<span class="timeSpentText">
+								<%= times.reduce(function(mem, item){
+									return mem+item.hours;
+								},0) %>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

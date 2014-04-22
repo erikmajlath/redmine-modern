@@ -66,6 +66,7 @@ define([
     	],
 
     	initialize: function(){
+
     	},
 
         defaults: {
@@ -74,6 +75,7 @@ define([
             tracker_id: 1,
             status_id: 1,
             priority_id: 1,
+            estimated_hours: 0,
             description: '',
             start_date: Date.today().toString('yyyy-MM-dd'),
         },
@@ -130,6 +132,9 @@ define([
 
                 json[ rel.keyDestination ] = value;
             });
+
+            //Return spent time together
+            json.spent_time = this.get('times').reduce(function(mem, item){return mem + item.get('hours')} ,0);
 
             return json;
         },

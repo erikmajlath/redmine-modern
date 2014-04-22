@@ -1,9 +1,12 @@
 <div class="userHeader"><%= firstname+' '+lastname%></div>
 <div class="userList"></div>
 <div class="userFooter">
-	<a class="addIssue"><span class="glyphicon glyphicon-plus"></span> Add issue</a>
+	<div class="addIssue">
+		<span class="glyphicon glyphicon-plus center-block addIssueIcon"></span>
+	</div>
 	<div class="issueInputWrap" style="display:none">
 		<input type="text" class="form-control issueInput" placeholder="Enter subject">
+
 		<button class="btn btn-primary btn-sm issueSubmit">Add</button><span class="glyphicon glyphicon-remove issueInputClose pull-right"></span>
 	</div>
 </div>

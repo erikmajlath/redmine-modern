@@ -9,7 +9,12 @@ define([
 
     var IssuepriorityModel = Backbone.RelationalModel.extend({
         defaults: {
-        }
+        	color: '#c0392b',
+        },
+
+        initialize: function(){
+        },
+
     });
 
     return IssuepriorityModel;

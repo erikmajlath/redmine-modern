@@ -18,12 +18,21 @@ define([
         initialize: function(){
             dev.c.issuePriorities = this;
             
+            this.listenTo(this, 'add', this.added);
+
             this.on('sync', this.onReset);
         },
 
         onReset: function(e){
             //Tell applicaiton that this has been fetched
             Backbone.dispatcher.trigger('fetchComplete', 'issuePriorities');
+
+        },
+
+        added: function(model){
+            model.set({
+                'opacity': this.indexOf(model)/this.length,
+            });
         },
     });
 

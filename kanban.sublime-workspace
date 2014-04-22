@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-bottom"
+			],
+			[
 				"margin-t",
 				"margin-right"
 			],
@@ -215,31 +219,31 @@
 			"file": "app/styles/main.css",
 			"settings":
 			{
-				"buffer_size": 1699,
+				"buffer_size": 1943,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/templates/issueInUserDetail.ejs",
+			"file": "app/scripts/templates/userWithIssues.ejs",
 			"settings":
 			{
-				"buffer_size": 4222,
+				"buffer_size": 511,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/views/issueInUserDetail.js",
+			"file": "app/scripts/views/issueInUser.js",
 			"settings":
 			{
-				"buffer_size": 5556,
+				"buffer_size": 1014,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/collections/timeActivities.js",
+			"file": "app/scripts/models/issue.js",
 			"settings":
 			{
-				"buffer_size": 780,
+				"buffer_size": 4050,
 				"line_ending": "Unix"
 			}
 		},
@@ -248,14 +252,6 @@
 			"settings":
 			{
 				"buffer_size": 3406,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/models/time.js",
-			"settings":
-			{
-				"buffer_size": 2566,
 				"line_ending": "Unix"
 			}
 		}
@@ -287,16 +283,20 @@
 	},
 	"file_history":
 	[
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issuePriorities.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/timeActivities.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/issuePriority.js",
+		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
 		"/home/erik/Documents/js/kanban/app/scripts/main.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issueStatuses.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
-		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
-		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/timeActivity.js",
-		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/models/time_activity.js",
 		"/home/erik/Documents/tex/bc/references.bib",
 		"/home/erik/Documents/js/kanban/app/scripts/views/userWithIssues.js",
@@ -306,13 +306,10 @@
 		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
 		"/home/erik/Documents/js/kanban/app/styles/main.css",
 		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUser.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/issuePriorities.js",
 		"/home/erik/Documents/js/kanban/app/index.html",
-		"/home/erik/Documents/js/kanban/app/scripts/models/issuePriority.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/trackers.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/issueStatus.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/tracker.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/boardProjects.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/boardProjects.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/modalContainer.ejs",
@@ -416,6 +413,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pickDueDate",
 			".pri",
 			"this",
 			"Majlo",
@@ -441,7 +439,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -450,15 +448,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1699,
+						"buffer_size": 1943,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1440,
-								1440
+								840,
+								840
 							]
 						],
 						"settings":
@@ -467,56 +465,55 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1275.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/scripts/templates/issueInUserDetail.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4222,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3247,
-								3247
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1369.0,
+						"translation.y": 714.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/scripts/views/issueInUserDetail.js",
+					"buffer": 1,
+					"file": "app/scripts/templates/userWithIssues.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5556,
+						"buffer_size": 511,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5335,
-								5335
+								202,
+								202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/scripts/views/issueInUser.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
 							]
 						],
 						"settings":
@@ -526,7 +523,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2215.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -534,30 +531,32 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/scripts/collections/timeActivities.js",
+					"file": "app/scripts/models/issue.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 780,
+						"buffer_size": 4050,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								323,
-								323
+								2020,
+								2020
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -588,36 +587,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/scripts/models/time.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2566,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1574,
-								1574
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1173.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -661,7 +630,7 @@
 	"project": "kanban.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -679,7 +648,7 @@
 		[
 			[
 				"",
-				"/media/erik/Windows7_OS/Program Files (x86)/Zend/Apache2/htdocs/teiresias_place_allocation/teiresias_place_allocation.sublime-project"
+				"~/Documents/ruby/redmine/redmine.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -15,7 +15,7 @@ define([
         className: 'issueInUser',
 
         events:{
-            'click .issueHeader': 'showDetails',
+            'click .issueWrap': 'showDetails',
         },
 
         initialize: function(){
