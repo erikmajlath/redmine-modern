@@ -8,9 +8,11 @@ define([
     'use strict';
 
     var UsersCollection = Backbone.Collection.extend({
-        model: UserModel,
+        model: UserModel,        
 
-        url: 'http://localhost:3000/users',
+        url: function(){
+            return Backbone.app.url+'users';
+        },
 
         initialize: function(){
         	dev.c.users = this;

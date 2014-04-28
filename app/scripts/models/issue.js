@@ -8,10 +8,11 @@ define([
     'models/issueStatus',
     'models/issuePriority',
     'models/tracker',
-    'collections/issues',
+    'models/journal',
+    'collections/issueJournals',
     'relational',
     'date',
-], function (_, Backbone, ProjectModel, UserModel, IssueStatusModel, IssuePriorityModel, TrackerModel, IssuesCollection) {
+], function (_, Backbone, ProjectModel, UserModel, IssueStatusModel, IssuePriorityModel, TrackerModel, JournalModel, IssueJournalsCollection) {
     'use strict';
 
     var IssueModel = Backbone.RelationalModel.extend({
@@ -63,9 +64,20 @@ define([
                 relatedModel: IssuePriorityModel,
                 includeInJSON: 'id',
             },
+            //relation to Journal
+            {
+                type: 'HasMany',
+                key: 'journals',
+                relatedModel: JournalModel,
+                collectionType: IssueJournalsCollection,
+                includeInJSON: false,
+            },
     	],
 
     	initialize: function(){
+
+            //Set url for fetching Journals
+            this.get('journals').url = Backbone.app.url+'issues/'+this.get('id');
 
     	},
 
@@ -87,6 +99,7 @@ define([
 
         //too dependant :(
         makeRelations: function(){
+
         	var project = Backbone.c.projects.get(this.get('project').id);
         	this.set('project_id', project);
 
@@ -118,6 +131,13 @@ define([
             Backbone.Model.prototype.sync.call(this, method, model, options);
         },
 
+        //Fetch with journals
+        fetchWithJournals: function(){
+            Backbone.Model.prototype.fetch.call(this, {data:{include:'journals'}});
+        },
+
+        //Returns json with all related models
+        //Because those models ale not needed in normal JSON
         templateJSON: function(options){
 
             var json = Backbone.Model.prototype.toJSON.call( this, options );

@@ -9,7 +9,10 @@ define([
 
     var IssueprioritiesCollection = Backbone.Collection.extend({
         model: IssuepriorityModel,
-        url: 'http://localhost:3000/enumerations/issue_priorities',
+
+        url: function(){
+            return Backbone.app.url+'enumerations/issue_priorities';
+        },
 
         parse: function(data){
         	return data.issue_priorities;

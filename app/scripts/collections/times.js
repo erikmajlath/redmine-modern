@@ -10,7 +10,9 @@ define([
     var TimesCollection = Backbone.Collection.extend({
         model: TimeModel,
 
-        url: 'http://localhost:3000/time_entries',
+        url: function(){
+            return Backbone.app.url+'time_entries';
+        },
 
         initialize: function(){
         	dev.c.times = this;

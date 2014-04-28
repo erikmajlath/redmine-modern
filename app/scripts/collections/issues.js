@@ -10,7 +10,9 @@ define([
     var IssuesCollection = Backbone.Collection.extend({
         model: IssueModel,
 
-        url: 'http://localhost:3000/issues',
+        url: function(){
+            return Backbone.app.url+'issues';
+        },
 
         initialize: function(){
         	dev.c.issues = this;

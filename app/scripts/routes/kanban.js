@@ -37,6 +37,8 @@ define([
             Backbone.c.issuePriorities = new issuePriorities();
             Backbone.c.timeActivities = new timeActivities();
 
+
+
             //Store current view
             this.currentView = null;
 

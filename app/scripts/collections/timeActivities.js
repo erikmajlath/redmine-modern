@@ -10,7 +10,9 @@ define([
     var TimeactivitiesCollection = Backbone.Collection.extend({
         model: TimeactivityModel,
 
-        url: 'http://localhost:3000/enumerations/time_entry_activities',
+        url: function(){
+            return Backbone.app.url+'enumerations/time_entry_activities';
+        },
 
         initialize: function(){
             dev.c.timeActivities = this;

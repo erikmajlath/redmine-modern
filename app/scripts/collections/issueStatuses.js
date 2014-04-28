@@ -9,7 +9,10 @@ define([
 
     var IssuestatusesCollection = Backbone.Collection.extend({
         model: IssuestatusModel,
-        url: 'http://localhost:3000/issue_statuses',
+
+        url: function(){
+            return Backbone.app.url+'issue_statuses';
+        },
 
         parse: function(data){
         	return data.issue_statuses;

@@ -9,7 +9,11 @@ define([
 
     var TrackersCollection = Backbone.Collection.extend({
         model: TrackersModel,
-        url: 'http://localhost:3000/trackers',
+
+        url: function(){
+            return Backbone.app.url+'trackers';
+        },
+
 
         parse: function(data){
         	return data.trackers;

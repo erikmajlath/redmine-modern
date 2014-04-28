@@ -11,7 +11,7 @@ define([
         model: ProjectsModel,
 
         url: function(){
-        	return 'http://localhost:3000/projects';
+        	return Backbone.app.url+'projects';
         },
 
         initialize: function(){
