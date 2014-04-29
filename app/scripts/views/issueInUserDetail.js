@@ -5,9 +5,10 @@ define([
     'underscore',
     'backbone',
     'templates',
+    'views/issueInUserDetailJournals',
     'date',
     'datepicker',
-], function ($, _, Backbone, JST) {
+], function ($, _, Backbone, JST, journalsView) {
     'use strict';
 
     var IssueinuserdetailView = Backbone.View.extend({
@@ -51,6 +52,9 @@ define([
             this.listenTo(this.model, 'change:status_id', this.renderStatus);
             this.listenTo(this.model, 'change:priority_id', this.renderPriority);
             this.listenTo(this.model, 'change:due_date', this.renderDueDate);
+            this.listenTo(this.model, 'change:journals', this.renderJournals);
+
+            this.journalsView = new journalsView({collection: this.model.get('journals')});
 
             this.render();
         },
@@ -66,6 +70,9 @@ define([
             data.activities = Backbone.c.timeActivities.toJSON();
 
             this.$el.html(this.template(data));
+            this.journalsView.setElement(this.$el.find('.journalsWrap')).render();
+    
+            //Append modal to body
         	$('body').append(this.$el);
 
             //Start modal
@@ -95,7 +102,11 @@ define([
 
         destroy: function(){
         	console.log('Issue In User Detail DESTROYED - BUM!!!');
+            //Remove children views first
+            this.journalsView.destroy();
+            //Remove modal div from body
             $('#issueDetail').remove();
+            //Remove this
         	this.remove();
         },
 

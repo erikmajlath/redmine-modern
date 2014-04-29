@@ -38,6 +38,8 @@ define([
 
         showDetails: function(){
             var view = new details({model: this.model});
+
+            this.model.fetchWithJournals();
         },
     });
 
