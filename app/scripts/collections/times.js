@@ -16,41 +16,21 @@ define([
 
         initialize: function(){
         	dev.c.times = this;
-        	
-            this.on('sync', this.onReset);
-            this.listenTo(Backbone.dispatcher, 'fetchComplete', this.relationDependencies);
 
-            //Those thing gotta be fethced before making relations
-            this.dep = {
-                projects: false,
-                users: false,
-                issues: false,
-                times: false,
-                timeActivities: false,
-            }
+            this.listenTo(Backbone.dispatcher, 'issuesFetched', this.issuesFetched);
         },
 
         parse: function(data){
         	return data.time_entries;
         },
 
-        onReset: function(){
-            //Tell applicaiton that this has been fetched
-            Backbone.dispatcher.trigger('fetchComplete', 'times');
+        issuesFetched: function(){
+            this.fetch({
+                success: function(){
+                    Backbone.dispatcher.trigger('timesFetched');
+                },
+            });
         },
-
-        relationDependencies: function(thing){
-            this.dep[thing] = true;
-
-            if(_(this.dep).chain().values().indexOf(false).value() == -1){
-                this.each(function(item){
-                    item.makeRelations();
-                });
-
-                Backbone.dispatcher.trigger('relationsComplete', 'times');
-            }
-        },
-
     });
 
     return TimesCollection;

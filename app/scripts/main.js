@@ -32,6 +32,9 @@ require.config({
         datepicker: {
             deps: ['jquery'],
         },
+        bootstrap: {
+            deps: ['jquery'],
+        },
     },
     paths: {
         jquery: '../bower_components/jquery/jquery',
@@ -66,30 +69,22 @@ require([
     //Also add header with redmine api key
     $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
 
+        //Choosing Redmine format
         options.url += '.json';
         options.crossDomain = true;
         options.headers = options.headers || {};
 
         _.extend(options.headers, {
-            'X-Redmine-API-Key': '3254777eb1db0be4c3e0bbf30236b29d8a87f11e',
+            'X-Redmine-API-Key': '0d6333b04653923c31008ef0773438c682b8d673',
         })
 
-        //If data need fix? When saving some models date needs to be in .data attribute
+        //When saving some models date needs to be in .data attribute
         if(options.redmineApiDataFix){
             var data = {};
             //Parse old data to JSON
             data[options.redmineApiDataFix] = JSON.parse(options.data);
             //Parse new structure to JSON
             options.data = JSON.stringify(data);
-        }
-
-        //if data need to be attached to GET request
-        if(options.redmineApiInclude){
-            var data = {};
-
-            data['include'] = options.redmineApiInclude;
-
-            options.data = data;
         }
     });
 

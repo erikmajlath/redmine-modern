@@ -23,7 +23,7 @@ define([
         initialize: function(){
         	console.log('UserWithIssues initialized!');
 
-            this.listenTo(this.model.get('issues'), 'add', this.renderIssues);
+            this.listenTo(this.model.get('issues'), 'add remove', this.renderIssues);
 
             this.children = _([]);
         },
@@ -42,8 +42,10 @@ define([
             //Destroy issues before rendering if any in children
 
             var fragment = $(document.createDocumentFragment());
-
-            this.model.get('issues').each(function(item){
+            var issues = this.model.get('issues').sortBy(function(item){
+                return -parseInt(item.get('priority_id').get('id'));
+            });
+            _(issues).each(function(item){
                 var view = new IssueInUserView({model: item, parent: this});
                 fragment.append(view.render().$el);
                 this.children.push(view);

@@ -9,46 +9,74 @@
 
 			<div class="container-fluid">
 				<div class="row row-close">	
-					<div class="statusWrap wrap col-lg-4">
-						<div class="dropdown-toggle editStatus edit" data-toggle="dropdown">
-							<span class="statusText"><%= status_id.name%></span> <span class="caret"></span>
-						</div>
-						<ul class="dropdown-menu" role="menu">
 
-							<% 
-								_(issueStatuses).each(function(item){
-									%>
-										<li>
-										<a class="changeStatus" value="<%= item.id %>"><%= item.name %></a>
-										</li>
-											
-									<%
-								})
-							%>
-						</ul>
+					<div class="priorityWrap wrap col-xs-6 col-sm-4">
+						<div class="priorityColor" style="background-color:<%= priority_id.color%>">
+							<div class="dropdown-toggle editPriority edit" data-toggle="dropdown">
+								<span class="priorityText"><%= priority_id.name%></span> <span class="caret"></span> 
+							</div>
+							<ul class="dropdown-menu" role="menu">
+
+									<% 
+									_(issuePriorities).each(function(item){
+										%>
+											<li>
+											<a class="changePriority" value="<%= item.id %>"><%= item.name %></a>
+											</li>
+												
+										<%
+									})
+								%>
+							</ul>
+						</div>
 					</div>
 
-					<div class="priorityWrap wrap col-lg-4">
-						<div class="dropdown-toggle editPriority edit" data-toggle="dropdown">
-
-							<span class="priorityText"><%= priority_id.name%></span> <span class="caret"></span> 
-						</div>
-						<ul class="dropdown-menu" role="menu">
+					<div class="statusWrap wrap col-xs-6 col-sm-4">
+						<div class="statusColor" style="background-color:<%= status_id.color%>">
+							<div class="dropdown-toggle editStatus edit" data-toggle="dropdown">
+								<span class="statusText"><%= status_id.name%></span> <span class="caret"></span>
+							</div>
+							<ul class="dropdown-menu" role="menu">
 
 								<% 
-								_(issuePriorities).each(function(item){
-									%>
-										<li>
-										<a class="changePriority" value="<%= item.id %>"><%= item.name %></a>
-										</li>
-											
-									<%
-								})
-							%>
-						</ul>
+									_(issueStatuses).each(function(item){
+										%>
+											<li>
+											<a class="changeStatus" value="<%= item.id %>"><%= item.name %></a>
+											</li>
+												
+										<%
+									})
+								%>
+							</ul>
+						</div>
 					</div>
 
-					<div class="trackerWrap wrap col-lg-4">
+				</div>
+
+				<div class="row">
+					<div class="projectWrap col-lg-12">
+						<span class="projectText"><b><%= project.name %></b></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="subjectWrap col-lg-12">
+						<div class="subject edit"><%= subject%>
+						</div>
+						<div class="subjectInputWrap" style="display:none">
+							<div class="form-group">
+								<input type="text" class="form-control subjectInput" value="<%= subject%>">
+							</div>
+							<button class="btn btn-primary submitSubject">Done</button>
+							<button class="btn btn-danger closeSubject"><span class="glyphicon glyphicon-remove"></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="trackerWrap wrap col-lg-6">
 						<div class="dropdown-toggle editTracker edit" data-toggle="dropdown">
 							<span class="trackerText"><%= tracker_id.name%></span> <span class="caret"></span>
 						</div>
@@ -66,75 +94,41 @@
 							%>
 						</ul>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="subjectWrap col-lg-12">
-						<div class="subject edit"><%= subject%>
+					<div class="userWrap wrap col-lg-6">
+						<div class="dropdown-toggle editUser edit pull-right" data-toggle="dropdown">
+							<span class="userText"><%= assigned_to_id.firstname%> <%= assigned_to_id.lastname %></span> <span class="caret"></span>
 						</div>
-						<div class="subjectInputWrap" style="display:none">
-							<div class="form-group">
-								<input type="text" class="form-control subjectInput" value="<%= subject%>">
-							</div>
-							<button class="btn btn-primary submitSubject">Save</button>
-							<button class="btn btn-danger closeSubject">Leave</button>
-						</div>
+						<ul class="dropdown-menu pull-right" role="menu">
+
+							<% 
+								_(users).each(function(item){
+									%>
+										<li>
+										<a class="changeUser" value="<%= item.id %>"><%= item.firstname %> <%= item.lastname %></a>
+										</li>
+											
+									<%
+								})
+							%>
+						</ul>
 					</div>
 				</div>
+
+
 			</div>
 		</div>
 
 		<div class="modal-body clearfix">
 
 			<div class="container-fluid">
-				<div class="row">
-					<div class="descriptionWrap col-lg-12">
-						<a class="changeDescription"><span class="glyphicon glyphicon-pencil"></span> Edit issue description</a>
-						<div class="descriptionInputWrap" style="display:none">
-							<div class="form-group">
-								<textarea class="form-control descriptionInput" rows="3"><%= description%></textarea>
-							</div>
-							<button class="btn btn-primary submitDescription">Save</button>
-							<button class="btn btn-danger closeDescription">Leave</button>
-						</div>
-					</div>
-				</div>
-
+				
 
 				<div class="row">
-					<div class="timeWrap col-lg-12">
-						<a class="addTime"> 
-							<span class="glyphicon glyphicon-plus"></span> Add time activity
-						</a>
-						<div class="timeInputWrap" style="display:none">
-							<div class="form-group">
-								<input type="text" class="form-control timeHoursInput" placeholder="Hours">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control timeDateInput" placeholder="Date" 
-								value="<%= Date.today().toString('yyyy-MM-dd') %>">
-							</div>
-							<div class="form-group">
-								<select class="form-control timeActivityInput">
-								<%
-									_(activities).each(function(item){
-										%>
-										<option value="<%= item.id%>"><%= item.name %></option>
-										<%
-									})
-								%>
-								</select>
-							</div>
-							<button class="btn btn-primary submitTime">Save</button>
-							<button class="btn btn-danger closeTime">Leave</button>
-						</div> 
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="dueDateWrap col-lg-12">
+					<div class="dueDateWrap col-lg-6">
 						<div class="row">
-							<div class="detailLabel col-lg-3">
+
+							<div class="detailLabel col-lg-6">
 								<span class="glyphicon glyphicon-time"></span> Due date
 							</div>
 							<div class="pickDueDateWrap">
@@ -153,23 +147,10 @@
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="projectWrap col-lg-12">
+					<div class="timeSpentWrap col-lg-6">
 						<div class="row">
-							<div class="detailLabel col-lg-3">
-								<span class="glyphicon glyphicon-briefcase"></span> Project
-							</div>
-							<span class="projectText"><%= project.name %></span>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="timeSpentWrap col-lg-12">
-						<div class="row">
-							<div class="detailLabel col-lg-3">
+							<div class="detailLabel col-lg-6">
 								<span class="glyphicon glyphicon-ok-circle"></span> Spent time
 							</div>
 							<span class="timeSpentText">
@@ -178,6 +159,60 @@
 								},0) %>
 							</span>
 						</div>
+
+						<div class="row">
+							<div class="timeWrap col-lg-12">
+								<a class="addTime"> 
+									<span class="glyphicon glyphicon-plus"></span> Add time activity
+								</a>
+								<div class="timeInputWrap" style="display:none">
+									<div class="form-group">
+										<input type="text" class="form-control timeHoursInput" placeholder="Hours">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control timeDateInput" placeholder="Date" 
+										value="<%= Date.today().toString('yyyy-MM-dd') %>">
+									</div>
+									<div class="form-group">
+										<select class="form-control timeActivityInput">
+										<%
+											_(activities).each(function(item){
+												%>
+												<option value="<%= item.id%>"><%= item.name %></option>
+												<%
+											})
+										%>
+										</select>
+									</div>
+									<button class="btn btn-primary submitTime">Save</button>
+									<button class="btn btn-danger closeTime">Leave</button>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="descriptionWrap col-lg-12">
+						<h3>Description</h3>
+						<a class="changeDescription"><span class="glyphicon glyphicon-pencil"></span> Edit issue description</a>
+						<div class="descriptionInputWrap" style="display:none">
+							<div class="form-group">
+								<textarea class="form-control descriptionInput" rows="3"><%= description%></textarea>
+							</div>
+							<button class="btn btn-primary submitDescription">Save</button>
+							<button class="btn btn-danger closeDescription">Leave</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="row footer">
+					<div class="col-md-6">
+					</div>
+
+					<div class="col-md-6">
+						<button class="btn btn-danger forgetChanges pull-right"><span class="glyphicon glyphicon-remove"></button>
+						<button class="btn btn-primary saveChanges pull-right">Save</button>
 					</div>
 				</div>
 

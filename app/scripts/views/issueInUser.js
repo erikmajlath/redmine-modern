@@ -20,7 +20,7 @@ define([
 
         initialize: function(){
         	console.log('IssueInUser initialized!');
-
+            
             this.listenTo(this.model, 'change', this.render);
         },
 

@@ -10,6 +10,7 @@ a{
 }
 .row-close{
 	margin-right: 0 !important;
+	margin-bottom: 1em;
 }
 /* END COMMON*/
 
@@ -116,7 +117,6 @@ a{
 	margin: 5px 0;
 }
 .issueDetail .wrap{
-	font-size: 1.2em;
 	position: relative;
 }
 .issueDetail .edit{
@@ -125,11 +125,14 @@ a{
 	position: relative;
 	display: inline-block;
 }
+.issueDetail .statusColor,.priorityColor{
+	text-align: center;
+}
 .issueDetail .detailLabel{
 	float: left;
 }
 .issueDetail .dueDateWrap{
-	margin: 5px 0;
+	
 }
 .issueDetail .dueDateInput{
 	visibility: hidden !important;
@@ -140,3 +143,11 @@ a{
 	margin: 0;
 }
 /* END ISSUEINUSERDETAILS */
+
+.affix-top{
+	
+}
+
+.affix{
+	top: 20px;
+}

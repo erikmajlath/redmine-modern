@@ -11,22 +11,25 @@ define([
         model: ProjectsModel,
 
         url: function(){
-        	return Backbone.app.url+'projects';
+            return Backbone.app.url+'projects';
         },
 
         initialize: function(){
         	dev.c.projects = this;
-            
-            this.on('sync', this.onReset);
+
+            this.listenTo(Backbone.dispatcher, 'currentUserFetched', this.afterCurrentUser);
         },
 
         parse: function(data){
             return data.projects;
         },
 
-        onReset: function(e){
-            //Tell applicaiton that this has been fetched
-            Backbone.dispatcher.trigger('fetchComplete', 'projects');
+        afterCurrentUser: function(){
+            this.fetch({
+                success: function(){
+                    Backbone.dispatcher.trigger('projectsFetched');
+                },
+            });
         },
     });
 

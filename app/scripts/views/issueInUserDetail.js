@@ -29,6 +29,9 @@ define([
             //Priority editing
             'click .changePriority': 'changePriority',
 
+            //User editing
+            'click .changeUser': 'changeUser',
+
             //Description Editing
             'click .changeDescription': 'changeDescription',
             'click .closeDescription': 'toggleDescription',
@@ -46,8 +49,11 @@ define([
         initialize: function(){
         	console.log('Issue In User Detail initialzed!');
 
+            this.oldAttributes = this.model.toJSON();
+
             //Listen to change events
             this.listenTo(this.model, 'change:subject', this.renderSubject);
+            this.listenTo(this.model, 'change:assigned_to_id', this.renderUser);
             this.listenTo(this.model, 'change:tracker_id', this.renderTracker);
             this.listenTo(this.model, 'change:status_id', this.renderStatus);
             this.listenTo(this.model, 'change:priority_id', this.renderPriority);
@@ -57,6 +63,7 @@ define([
             this.journalsView = new journalsView({collection: this.model.get('journals')});
 
             this.render();
+
         },
 
         render: function(){
@@ -68,10 +75,12 @@ define([
             data.issueStatuses = Backbone.c.issueStatuses.toJSON();
             data.issuePriorities = Backbone.c.issuePriorities.toJSON();
             data.activities = Backbone.c.timeActivities.toJSON();
+            data.users = Backbone.c.users.toJSON();
 
             this.$el.html(this.template(data));
             this.journalsView.setElement(this.$el.find('.journalsWrap')).render();
-    
+
+
             //Append modal to body
         	$('body').append(this.$el);
 
@@ -98,6 +107,8 @@ define([
         
         closeModal: function(){
             this.$('#issueDetail').modal('hide');
+
+            console.log(this.model.toJSON());
         },
 
         destroy: function(){
@@ -124,7 +135,8 @@ define([
         submitSubject: function(){
             this.toggleSubject();
             var input = this.$('.subjectInput').val();
-            this.model.save('subject', input);
+
+            this.model.set('subject', input);
         },
 
         renderSubject: function(){
@@ -133,7 +145,7 @@ define([
 
         changeTracker: function(e){
             var value = $(e.target).attr('value')
-            this.model.save('tracker_id', value);
+            this.model.set('tracker_id', value);
         },
 
         renderTracker: function(){
@@ -142,20 +154,33 @@ define([
 
         changeStatus: function(e){
             var value = $(e.target).attr('value')
-            this.model.save('status_id', value);
+            this.model.set('status_id', value);
         },
 
         renderStatus: function(){
             this.$('.statusText').html(this.model.get('status_id').get('name'));
+            this.$('.statusColor').css('background-color', this.model.get('status_id').get('color'));
         },
 
         changePriority: function(e){
             var value = $(e.target).attr('value')
-            this.model.save('priority_id', value);
+            this.model.set('priority_id', value);
         },
 
         renderPriority: function(){
             this.$('.priorityText').html(this.model.get('priority_id').get('name'));
+            this.$('.priorityColor').css('background-color', this.model.get('priority_id').get('color'));
+        },
+
+        changeUser: function(e){
+            var value = $(e.target).attr('value')
+            this.model.set('assigned_to_id', value);
+        },
+
+        renderUser: function(){
+            var user = this.model.get('assigned_to_id');
+            var name = user.get('firstname')+' '+user.get('lastname'); 
+            this.$('.userText').html(name);
         },
 
         toggleDescription: function(){
@@ -171,7 +196,7 @@ define([
         submitDescription: function(){
             this.toggleDescription();
             var input = this.$('.descriptionInput').val();
-            this.model.save('description', input);
+            this.model.set('description', input);
         },
         
         toggleTime: function(){
@@ -205,7 +230,7 @@ define([
             var that = this;
 
             input.datepicker('show').on('changeDate', function(){
-                that.model.save('due_date', input.val());
+                that.model.set('due_date', input.val());
             });
         },
 

@@ -9,10 +9,22 @@ define([
 
     var IssuepriorityModel = Backbone.RelationalModel.extend({
         defaults: {
-        	color: '#c0392b',
+        	r: '192',
+            g: '57',
+            b: '43',
+            color: 'rgba(192, 57, 43, 1.0)',
         },
 
         initialize: function(){
+            this.listenTo(this, 'change:opacity', this.setRGBA);
+        },
+
+        setRGBA: function(){
+            var r = this.get('r');
+            var g = this.get('g');
+            var b = this.get('b');
+            var o = this.get('opacity');
+            this.set('color', 'rgba('+r+','+g+','+b+','+o+')');
         },
 
     });

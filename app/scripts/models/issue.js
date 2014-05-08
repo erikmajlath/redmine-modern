@@ -79,6 +79,23 @@ define([
             //Set url for fetching Journals
             this.get('journals').url = Backbone.app.url+'issues/'+this.get('id');
 
+            var project = Backbone.c.projects.get(this.get('project').id);
+            this.set('project_id', project);
+
+            var status = Backbone.c.issueStatuses.get(this.get('status').id);
+            this.set('status_id', status);
+
+            var priority = Backbone.c.issuePriorities.get(this.get('priority').id);
+            this.set('priority_id', priority);
+
+            var tracker = Backbone.c.trackers.get(this.get('tracker').id);
+            this.set('tracker_id', tracker);
+
+            //Mb user is not assigned?
+            if(this.get('assigned_to')){
+                var user = Backbone.c.users.get(this.get('assigned_to').id);
+                this.set('assigned_to_id', user);   
+            }
     	},
 
         defaults: {
@@ -95,28 +112,6 @@ define([
         parse: function(data){
             if(data.issue) return data.issue;
             return data;
-        },
-
-        //too dependant :(
-        makeRelations: function(){
-
-        	var project = Backbone.c.projects.get(this.get('project').id);
-        	this.set('project_id', project);
-
-            var status = Backbone.c.issueStatuses.get(this.get('status').id);
-            this.set('status_id', status);
-
-            var priority = Backbone.c.issuePriorities.get(this.get('priority').id);
-            this.set('priority_id', priority);
-
-            var tracker = Backbone.c.trackers.get(this.get('tracker').id);
-            this.set('tracker_id', tracker);
-
-            //Mb user is not assigned?
-        	if(this.get('assigned_to')){
-        		var user = Backbone.c.users.get(this.get('assigned_to').id);
-        		this.set('assigned_to_id', user);	
-        	}
         },
 
         sync: function(method, model, options){
