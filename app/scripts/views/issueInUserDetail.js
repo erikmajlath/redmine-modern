@@ -15,6 +15,8 @@ define([
         template: JST['app/scripts/templates/issueInUserDetail.ejs'],
 
         events: {
+            'click .close': 'forgetChanges',
+
             //Subject editing
             'click .subject': 'editSubject',
             'click .closeSubject': 'toggleSubject',

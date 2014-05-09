@@ -145,4 +145,7 @@ a{
 .issueDetail .modal-footer{
 	text-align: left !important;
 }
+.issueDetail .journal{
+	margin-bottom: 10px
+}
 /* END ISSUEINUSERDETAILS */

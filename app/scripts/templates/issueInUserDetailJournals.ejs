@@ -6,11 +6,21 @@
 		  <div class="progress-bar"  role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
 		  </div>
 		</div>
-
-		<% _(journals).forEach(function(item){ %>
-
-			<div><%= item.user.name %></div>
-
+		<% _(journals).each(function(item){ %>
+			<div class="journal">
+				<div><%= item.user.name %> <b><%= item.dateText %></b></div>
+				<ul class="journalDetails">
+					<% _(item.details).each(function(detail){ %>
+						<li>
+							<b><%= detail.name %></b>
+							<i><%= detail.old_value %></i>
+							to 
+							<i><%= detail.new_value %></i>
+						</li>
+					<% })%>
+				</ul>
+				<p class="journalNotes"><i><%= item.notes %></i></p>
+			</div>
 		<% }); %>
-	</div>
+</div>
 <% } %>

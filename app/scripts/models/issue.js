@@ -105,7 +105,6 @@ define([
             priority_id: 1,
             status_id: 1,
             tracker_id: 1,
-            estimated_hours: 0,
             description: '',
             start_date: Date.today().toString('yyyy-MM-dd'),
         },

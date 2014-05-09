@@ -28,12 +28,25 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12">
-					<span class="issueTime pull-left"><%= spent_time %> / <%= estimated_hours %> h</span>
+					<span class="issueTime pull-left">
+					<%= spent_time %> 
+					/ 
+					<% if(typeof estimated_hours == 'undefined'){
+							print('0');
+						}else{
+							print(estimated_hours);
+						} %> h
+					</span>
 					<span class="issueDate pull-right">
 						<% if(typeof start_date != 'undefined')
 							print(Date.parse(start_date).toString('dd.MM')) %> - 
 						<% if(typeof due_date != 'undefined'){ 
-								print(Date.parse(due_date).toString('dd.MM.yyyy'))
+								var due = Date.parse(due_date);
+								print(due.toString('dd.MM.yyyy')) 
+								if(Date.today().compareTo(due) == 1){ %>
+								<span class="glyphicon glyphicon-exclamation-sign"></span>
+
+						<%		}
 							}else{
 								print('Future');
 							} %>
