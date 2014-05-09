@@ -21,7 +21,20 @@ define([
         },
 
         parse: function(data){
-        	return data.issues;
+            var newData = _(data.issues).map(function(issue){
+                //Match data from server to form
+                //compatible with REST API
+                issue.project_id = issue.project.id;  
+                issue.status_id = issue.status.id;
+                issue.priority_id = issue.priority.id;
+                issue.tracker_id = issue.tracker.id;
+
+                if(issue.assigned_to)
+                    issue.assigned_to_id = issue.assigned_to.id;
+
+                return issue;
+            });
+        	return newData;
         },
 
         usersFetched: function(){

@@ -110,6 +110,7 @@ define([
             $('main').html(view.render().el);
 
             //Do postRender if present
+            console.log(view.postRender);
             if(view.postRender)
                 view.postRender();
 

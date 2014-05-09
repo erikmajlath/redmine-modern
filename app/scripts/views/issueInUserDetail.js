@@ -44,14 +44,24 @@ define([
 
             //Due Date editing
             'click .pickDueDate': 'pickDueDate',
+
+            //Comment editing
+            'keyup .commentInput': 'showFooter',
+
+            //Saving
+            'click .saveChanges': 'saveChanges',
+            'click .forgetChanges': 'forgetChanges',
         },
 
         initialize: function(){
         	console.log('Issue In User Detail initialzed!');
+            var that = this;
+            console.log(this);
 
             this.oldAttributes = this.model.toJSON();
 
             //Listen to change events
+            this.listenTo(this.model, 'change:subject change:assigned_to_id change:tracker_id change:status_id change:priority_id change:due_date', this.showFooter);
             this.listenTo(this.model, 'change:subject', this.renderSubject);
             this.listenTo(this.model, 'change:assigned_to_id', this.renderUser);
             this.listenTo(this.model, 'change:tracker_id', this.renderTracker);
@@ -60,7 +70,16 @@ define([
             this.listenTo(this.model, 'change:due_date', this.renderDueDate);
             this.listenTo(this.model, 'change:journals', this.renderJournals);
 
-            this.journalsView = new journalsView({collection: this.model.get('journals')});
+            this.journalsView = new journalsView({collection: this.model.get('journals'), hasId: this.model.has('id')});
+
+            //Not new model
+            if(this.model.has('id')){
+                this.model.fetchWithJournals({
+                    success: function(){
+                        that.journalsView.hideLoader();
+                    },
+                });
+            }
 
             this.render();
 
@@ -92,13 +111,13 @@ define([
 
             //Attach datepicker for Time
             this.$('.timeDateInput').datepicker({
-                format: "yyyy-mm-dd",
+                format: 'yyyy-mm-dd',
                 autoclose: true,
             });
 
             //Attach datepicker for Due Date
             this.$('.dueDateInput').datepicker({
-                format: "yyyy-mm-dd",
+                format: 'yyyy-mm-dd',
                 autoclose: true,
             });
 
@@ -107,8 +126,6 @@ define([
         
         closeModal: function(){
             this.$('#issueDetail').modal('hide');
-
-            console.log(this.model.toJSON());
         },
 
         destroy: function(){
@@ -144,7 +161,7 @@ define([
         },
 
         changeTracker: function(e){
-            var value = $(e.target).attr('value')
+            var value = $(e.target).attr('value');
             this.model.set('tracker_id', value);
         },
 
@@ -153,7 +170,7 @@ define([
         },
 
         changeStatus: function(e){
-            var value = $(e.target).attr('value')
+            var value = $(e.target).attr('value');
             this.model.set('status_id', value);
         },
 
@@ -163,7 +180,7 @@ define([
         },
 
         changePriority: function(e){
-            var value = $(e.target).attr('value')
+            var value = $(e.target).attr('value');
             this.model.set('priority_id', value);
         },
 
@@ -173,14 +190,14 @@ define([
         },
 
         changeUser: function(e){
-            var value = $(e.target).attr('value')
+
+            var value = $(e.target).attr('value');
             this.model.set('assigned_to_id', value);
         },
 
         renderUser: function(){
             var user = this.model.get('assigned_to_id');
-            var name = user.get('firstname')+' '+user.get('lastname'); 
-            this.$('.userText').html(name);
+            this.$('.userText').html(user.get('name'));
         },
 
         toggleDescription: function(){
@@ -236,6 +253,62 @@ define([
 
         renderDueDate: function(){
             this.$('.dueDateText').html(this.model.get('due_date'));
+        },
+
+        showFooter: function(){
+            this.$('.saveInput').show();
+        },
+
+        saveChanges: function(){
+            //Creating or updating?
+            if(this.model.has('id')){
+                //Issue is being updated
+                var that = this;
+                var comment = this.$('.commentInput').val().trim();
+
+                if(comment){
+                    this.model.set('notes', comment);
+                }
+
+                this.model.save({},{
+                    success: function(){
+                        that.model.unset('notes');
+                    },
+                });
+            }else{
+                //Creating new issue
+                var data = this.model.toJSON();
+                this.model.destroy();
+
+                Backbone.c.issues.create(data);
+            }
+            
+            this.closeModal();
+        },
+
+        forgetChanges: function(){
+            //if this was new issue
+            if(this.model.has('id')){
+                //To remove newly set values
+                var newKeys = _.keys(this.model.toJSON());
+                var oldKeys = _.keys(this.oldAttributes);
+                //Which keys to unset?
+                var unset = _.difference(newKeys, oldKeys);
+
+                _.each(unset, function(item){
+                    this.model.unset(item);
+                }, this);
+
+                //Reset to old values
+                this.model.set(this.oldAttributes);
+                
+            }else{
+                this.stopListening();
+                this.model.destroy();
+                
+            }
+
+            this.closeModal();
         },
 
     });

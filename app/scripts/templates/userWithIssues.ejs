@@ -1,13 +1,19 @@
-<div class="userHeader"><%= firstname+' '+lastname%></div>
+<div class="userHeader"><%= name%></div>
 <div class="userList"></div>
 <div class="userFooter">
-	<div class="addIssue">
+	<div class="addIssue pointer">
 		<span class="glyphicon glyphicon-plus center-block addIssueIcon"></span>
 	</div>
 	<div class="issueInputWrap" style="display:none">
-		<input type="text" class="form-control issueInput" placeholder="Enter subject">
-
-		<button class="btn btn-primary btn-sm issueSubmit">Add</button><span class="glyphicon glyphicon-remove issueInputClose pull-right"></span>
+		<div class="form-group">
+			<label>Project:</label>
+			<select class="form-control issueProjectInput">
+				<% _(userProjects).each(function(item){ %>
+					<option value="<%= item.get('id') %>"><%= item.get('name') %></option>
+				<%	}); %>
+			</select>
+		</div>
+		<button class="btn btn-default issueSubmit">Add</button><span class="glyphicon glyphicon-remove issueInputClose pull-right pointer"></span>
 	</div>
 </div>
 

@@ -18,7 +18,8 @@ define([
 
             this.collection = Backbone.c.users;
 
-            Backbone.dispatcher.once('collectionsFetched', this.renderContent, this);
+            //Times are last part of loading process, we can start rendering right after
+            Backbone.dispatcher.once('timesFetched', this.renderContent, this);
             this.listenTo(Backbone.dispatcher, 'resize', this.windowResize);
 
             this.children = _([]);
@@ -27,9 +28,6 @@ define([
         render: function(){
             console.log('User & Issues view rendered!');
         	this.$el.html(this.template());
-
-            //Adjust height
-            this.windowResize();
 
             this.renderContent();
 
@@ -63,7 +61,12 @@ define([
             //Add iscroll, need to add it after DOM is loaded
             if(this.iscroll)
                 this.iscroll.destroy();
-            this.iscroll = new IScroll('.listWrap', {scrollX: true, scrollY: false});
+
+            if($('.listWrap').length)
+                this.iscroll = new IScroll('.listWrap', {scrollX: true, scrollY: false});
+
+            //Adjust height
+            Backbone.dispatcher.trigger('resize');
         },
 
         destroy: function(){
@@ -77,7 +80,10 @@ define([
         },
 
         windowResize: function(){
+            //New window height
             var windowH = $(window).height();
+
+            //Set board height
             this.$('.boardContainer').css('height', windowH - 75);
         },
     });

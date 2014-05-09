@@ -79,6 +79,7 @@ define([
             //Set url for fetching Journals
             this.get('journals').url = Backbone.app.url+'issues/'+this.get('id');
 
+            /*
             var project = Backbone.c.projects.get(this.get('project').id);
             this.set('project_id', project);
 
@@ -96,21 +97,35 @@ define([
                 var user = Backbone.c.users.get(this.get('assigned_to').id);
                 this.set('assigned_to_id', user);   
             }
+            */
     	},
 
         defaults: {
-            subject: '',
-            project_id: 2,
-            tracker_id: 1,
-            status_id: 1,
+            subject: 'Insert subject',
             priority_id: 1,
+            status_id: 1,
+            tracker_id: 1,
             estimated_hours: 0,
             description: '',
             start_date: Date.today().toString('yyyy-MM-dd'),
         },
 
         parse: function(data){
-            if(data.issue) return data.issue;
+            if(data.issue){
+                var issue = data.issue;
+                
+                //Match data from server to form
+                //compatible with REST API
+                issue.project_id = issue.project.id;  
+                issue.status_id = issue.status.id;
+                issue.priority_id = issue.priority.id;
+                issue.tracker_id = issue.tracker.id;
+
+                if(issue.assigned_to)
+                    issue.assigned_to_id = issue.assigned_to.id;
+
+                return issue;
+            } 
             return data;
         },
 
@@ -127,8 +142,13 @@ define([
         },
 
         //Fetch with journals
-        fetchWithJournals: function(){
-            Backbone.Model.prototype.fetch.call(this, {data:{include:'journals'}});
+        fetchWithJournals: function(options){
+            if(!this.has('id')) return;
+
+            var options = options || {};
+
+            options.data = {include:'journals'};
+            Backbone.Model.prototype.fetch.call(this, options);
         },
 
         //Returns json with all related models

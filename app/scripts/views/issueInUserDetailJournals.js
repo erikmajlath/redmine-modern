@@ -23,6 +23,7 @@ define([
         	//No functionality required from journal. Templating whole collection
         	var data = {};
         	data.journals = this.collection.toJSON();
+            data.hasId = this.options.hasId;            
         	this.$el.html(this.template(data));
         	return this;
         },
@@ -33,13 +34,8 @@ define([
         	this.remove();
         },
 
-        printEvent: function(e){
-        	console.log(e);
-        },
-
-        hideIndicator: function(){
-        	console.log('HIDEEN');
-        	this.$('.progress').hide();
+        hideLoader: function(){
+        	this.$('.loader').hide();
         },
     });
 

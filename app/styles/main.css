@@ -57,7 +57,7 @@ a{
 	padding: 5px;
 }
 .userWithIssues .userList{
-	
+	overflow: auto;
 }
 .userWithIssues .userFooter{
 	padding: 5px;
@@ -71,8 +71,7 @@ a{
 	margin-bottom: 5px;
 }
 .userWithIssues .issueInputClose{
-	color: #666;
-	margin: 5px 10px 0 10px;
+	margin: 10px 10px 0;
 	font-size: 1.5em;
 }
 /* END USSERWITHISSUES */
@@ -127,6 +126,7 @@ a{
 }
 .issueDetail .statusColor,.priorityColor{
 	text-align: center;
+	border: 1px dashed #CCCCCC;
 }
 .issueDetail .detailLabel{
 	float: left;
@@ -142,12 +142,7 @@ a{
 	padding: 0;
 	margin: 0;
 }
+.issueDetail .modal-footer{
+	text-align: left !important;
+}
 /* END ISSUEINUSERDETAILS */
-
-.affix-top{
-	
-}
-
-.affix{
-	top: 20px;
-}

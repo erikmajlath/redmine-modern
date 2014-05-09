@@ -56,7 +56,7 @@
 
 				<div class="row">
 					<div class="projectWrap col-lg-12">
-						<span class="projectText"><b><%= project.name %></b></span>
+						<span class="projectText"><b><%= project_id.name %></b></span>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 
 				<div class="row">
 
-					<div class="trackerWrap wrap col-lg-6">
+					<div class="trackerWrap wrap col-xs-6">
 						<div class="dropdown-toggle editTracker edit" data-toggle="dropdown">
 							<span class="trackerText"><%= tracker_id.name%></span> <span class="caret"></span>
 						</div>
@@ -95,17 +95,19 @@
 						</ul>
 					</div>
 
-					<div class="userWrap wrap col-lg-6">
+					<div class="userWrap wrap col-xs-6 clearfix">
 						<div class="dropdown-toggle editUser edit pull-right" data-toggle="dropdown">
-							<span class="userText"><%= assigned_to_id.firstname%> <%= assigned_to_id.lastname %></span> <span class="caret"></span>
+							<span class="userText"><%= assigned_to_id.name%></span>
+							<span class="caret"></span>
 						</div>
+						
 						<ul class="dropdown-menu pull-right" role="menu">
 
 							<% 
 								_(users).each(function(item){
 									%>
 										<li>
-										<a class="changeUser" value="<%= item.id %>"><%= item.firstname %> <%= item.lastname %></a>
+										<a class="changeUser" value="<%= item.id %>"><%= item.name %></a>
 										</li>
 											
 									<%
@@ -184,8 +186,8 @@
 										%>
 										</select>
 									</div>
-									<button class="btn btn-primary submitTime">Save</button>
-									<button class="btn btn-danger closeTime">Leave</button>
+									<button class="btn btn-primary submitTime">Done</button>
+									<button class="btn btn-danger closeTime"><span class="glyphicon glyphicon-remove"></button>
 								</div> 
 							</div>
 						</div>
@@ -200,19 +202,25 @@
 							<div class="form-group">
 								<textarea class="form-control descriptionInput" rows="3"><%= description%></textarea>
 							</div>
-							<button class="btn btn-primary submitDescription">Save</button>
-							<button class="btn btn-danger closeDescription">Leave</button>
+							<button class="btn btn-primary submitDescription">Done</button>
+							<button class="btn btn-danger closeDescription"><span class="glyphicon glyphicon-remove"></button>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
 
-				<div class="row footer">
-					<div class="col-md-6">
+		<div class="modal-footer">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-7 form-group">
+						<input class="form-control commentInput" placeholder="Add comment"
+						style="<% if(typeof id == 'undefined')print('display:none'); %>">
 					</div>
 
-					<div class="col-md-6">
-						<button class="btn btn-danger forgetChanges pull-right"><span class="glyphicon glyphicon-remove"></button>
-						<button class="btn btn-primary saveChanges pull-right">Save</button>
+					<div class="col-md-5 saveInput" style="display:none">
+						<button class="btn btn-primary saveChanges">Save</button>
+						<button class="btn btn-danger forgetChanges">Throw away</button>
 					</div>
 				</div>
 

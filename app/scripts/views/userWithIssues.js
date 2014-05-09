@@ -5,8 +5,10 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'views/issueInUser'
-], function ($, _, Backbone, JST, IssueInUserView) {
+    'models/issue',
+    'views/issueInUser',
+    'views/issueInUserDetail',
+], function ($, _, Backbone, JST, IssueModel, IssueInUserView, issueInuserDetailView) {
     'use strict';
 
     var UserwithissuesView = Backbone.View.extend({
@@ -15,24 +17,30 @@ define([
         className: 'userWithIssues',
 
         events: {
-            'click .addIssue': 'showIssueInput',
+            'click .addIssue': 'toggleIssueInput',
             'click .issueSubmit': 'createIssue',
-            'click .issueInputClose': 'hideIssueInput',
+            'click .issueInputClose': 'toggleIssueInput',
         },
 
         initialize: function(){
         	console.log('UserWithIssues initialized!');
 
             this.listenTo(this.model.get('issues'), 'add remove', this.renderIssues);
+            this.listenTo(Backbone.dispatcher, 'resize', this.windowResize);
 
             this.children = _([]);
+
         },
 
         render: function(){
         	console.log('UserWithIssues rendered!');
 
-            this.$el.html(this.template(this.model.toJSON()));
+            var data = this.model.toJSON();
+            data.userProjects = this.model.get('memberships').pluck('project');
+
+            this.$el.html(this.template(data));
             this.renderIssues();
+
             return this;
         },
 
@@ -64,20 +72,30 @@ define([
             this.remove();
         },
 
-        hideIssueInput: function(){
-            this.$('.addIssue').show();
-            this.$('.issueInputWrap').hide();
-        },
-
-        showIssueInput: function(){
-            this.$('.addIssue').hide();
-            this.$('.issueInputWrap').show();
-            this.$('.issueInput').focus();
+        toggleIssueInput: function(){
+            this.$('.addIssue').toggle();
+            this.$('.issueInputWrap').toggle();
+            this.windowResize();
         },
 
         createIssue: function(){
-            this.hideIssueInput();
-            Backbone.c.issues.create({subject: this.$('.issueInput').val(), assigned_to_id: this.model.get('id')});
+            this.toggleIssueInput();
+            var project_id = this.$('.issueProjectInput').val();
+            var assigned_to_id = this.model.get('id');
+            var issue = new IssueModel({
+                project_id: project_id,
+                assigned_to_id: assigned_to_id,
+            });
+
+            var view = new issueInuserDetailView({model: issue});
+        },
+
+        windowResize: function(){
+            var windowH = $(window).height();
+            var headerH = this.$el.find('.userHeader').height();
+            var footerH = this.$el.find('.userFooter').height();
+
+            this.$('.userList').css('max-height', windowH - headerH - footerH - 105);
         },
     });
 
