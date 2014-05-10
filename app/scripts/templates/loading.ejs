@@ -1,0 +1,43 @@
+<div class="modal fade loadingModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Connecting</h4>
+      </div>
+      <div class="modal-body">
+        
+      	  <div class="loading" style="display:none">
+      	  	<div class="progress">
+      	  	  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+      	  	  </div>
+      	  	</div>
+      	  </div>
+
+	      <div class="unauthorized" style="display:none">
+	      	<h3 class="nephirits">
+	      		<span class="glyphicon glyphicon-ok-circle"></span>
+	      		Connected to Redmine
+	      	</h3>
+	      	<h3 class="pomegranate">
+	      		<span class="glyphicon glyphicon-remove-sign"></span>
+	      		Unauthorized
+	      	</h3>
+	      </div>
+
+	      <div class="error" style="display:none">
+	      	<h3 class="pomegranate">
+	      		<span class="glyphicon glyphicon-remove-circle"></span>
+	      		Redmine not found
+	      	</h3>
+	      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+

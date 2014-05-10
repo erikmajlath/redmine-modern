@@ -4,6 +4,154 @@
 		"selected_items":
 		[
 			[
+				"curre",
+				"currentUserUnauthorized"
+			],
+			[
+				"jq",
+				"jqXHR"
+			],
+			[
+				"api",
+				"apiKeyInput"
+			],
+			[
+				"old",
+				"oldName"
+			],
+			[
+				"journal",
+				"journals"
+			],
+			[
+				"nice",
+				"niceAttributeName"
+			],
+			[
+				"date",
+				"dateText"
+			],
+			[
+				"for",
+				"forgetChanges"
+			],
+			[
+				"clo",
+				"closeModal"
+			],
+			[
+				"type",
+				"typeof"
+			],
+			[
+				"priority",
+				"priority_id"
+			],
+			[
+				"IssueIn",
+				"issueInuserDetail"
+			],
+			[
+				"collec",
+				"collectionType"
+			],
+			[
+				"ass",
+				"assigned_to"
+			],
+			[
+				"issue",
+				"issues"
+			],
+			[
+				"prj",
+				"project_id"
+			],
+			[
+				"proj",
+				"project_id"
+			],
+			[
+				"sho",
+				"showFooter"
+			],
+			[
+				"st",
+				"status_id"
+			],
+			[
+				"tracker",
+				"tracker_id"
+			],
+			[
+				"new",
+				"newKeys"
+			],
+			[
+				"ol",
+				"oldKeys"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"win",
+				"windowResize"
+			],
+			[
+				"windo",
+				"windowH"
+			],
+			[
+				"use",
+				"usersFetched"
+			],
+			[
+				"mana",
+				"managedProjects"
+			],
+			[
+				"pro",
+				"projectMembersFetched"
+			],
+			[
+				"member",
+				"membership"
+			],
+			[
+				"current",
+				"currentUser"
+			],
+			[
+				"man",
+				"managedProjectMembersFetch"
+			],
+			[
+				"pr",
+				"projects"
+			],
+			[
+				"curretn",
+				"currentUser"
+			],
+			[
+				"members",
+				"memberships"
+			],
+			[
+				"Proj",
+				"projectMembersFetched"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Pro",
+				"PojectMembershipModel"
+			],
+			[
 				"jour",
 				"journalsView"
 			],
@@ -22,10 +170,6 @@
 			[
 				"margin-t",
 				"margin-right"
-			],
-			[
-				"date",
-				"datepicker"
 			],
 			[
 				"boo",
@@ -78,10 +222,6 @@
 			[
 				"font-",
 				"font-size"
-			],
-			[
-				"issue",
-				"issuePriorities"
 			],
 			[
 				"issu",
@@ -150,10 +290,6 @@
 			[
 				"no",
 				"nowrap"
-			],
-			[
-				"curre",
-				"currentView"
 			],
 			[
 				"j",
@@ -228,34 +364,34 @@
 	"buffers":
 	[
 		{
+			"file": "app/scripts/templates/loading.ejs",
+			"settings":
+			{
+				"buffer_size": 1228,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/views/loading.js",
+			"settings":
+			{
+				"buffer_size": 1465,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/views/landing.js",
+			"settings":
+			{
+				"buffer_size": 2073,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/styles/main.css",
 			"settings":
 			{
-				"buffer_size": 2055,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/templates/issueInUserDetail.ejs",
-			"settings":
-			{
-				"buffer_size": 6813,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/main.js",
-			"settings":
-			{
-				"buffer_size": 2640,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/views/issueInUserDetail.js",
-			"settings":
-			{
-				"buffer_size": 7685,
+				"buffer_size": 2212,
 				"line_ending": "Unix"
 			}
 		}
@@ -287,53 +423,60 @@
 	},
 	"file_history":
 	[
+		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/landing.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUser.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
+		"/home/erik/Documents/js/kanban/app/scripts/main.js",
+		"/home/erik/Documents/js/kanban/app/scripts/views/landing.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/currentUser.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/boardUsers.ejs",
+		"/home/erik/Documents/js/kanban/app/index.html",
+		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetailJournals.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetailJournals.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/views/userWithIssues.js",
+		"/home/erik/Documents/tex/bc/mockup/ep2svg.sh",
+		"/home/erik/Documents/js/kanban/app/styles/main.css",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/userWithIssues.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/views/boardUsers.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/memberships.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/project.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/user.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/membership.js",
 		"/home/erik/Documents/tex/bc/source_code/template.js",
 		"/home/erik/Documents/tex/detex/bc.txt",
-		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUser.js",
-		"/home/erik/Documents/js/kanban/app/scripts/views/userWithIssues.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/models/issueStatus.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/issuePriority.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issuePriorities.js",
-		"/home/erik/Documents/js/kanban/app/scripts/models/user.js",
-		"/home/erik/Documents/js/kanban/app/scripts/main.js",
 		"/home/erik/Documents/tex/bc/source_code/relation.js",
 		"/home/erik/Documents/tex/bc/references.bib",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetailJournals.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetailJournals.js",
 		"/home/erik/Documents/tex/bc/source_code/initialize.js",
 		"/home/erik/Documents/tex/bc/source_code/router.js",
-		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
 		"/home/erik/Documents/ruby/redmine/doc/CHANGELOG",
 		"/home/erik/Documents/ruby/redmine/lib/redmine/version.rb",
 		"/media/erik/Windows7_OS/Program Files (x86)/Zend/Apache2/htdocs/teiresias_pa_update/ajax/xmlExport.php",
 		"/media/erik/Windows7_OS/Program Files (x86)/Zend/Apache2/htdocs/teiresias_pa_update/ajax/xml_for_paratiritis.xml",
-		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
-		"/home/erik/Documents/js/kanban/app/index.html",
 		"/home/erik/Documents/js/kanban/app/scripts/models/journal.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issueJournals.js",
-		"/home/erik/Documents/js/kanban/app/styles/main.css",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/timeActivities.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issueStatuses.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/trackers.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/userWithIssues.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
-		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/timeActivity.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/time_activity.js",
-		"/home/erik/Documents/js/kanban/app/scripts/views/boardUsers.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/tracker.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/boardProjects.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/boardProjects.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/modalContainer.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/usersIssues.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/usersIssues.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/models/project.js",
 		"/home/erik/Documents/js/kanban/.gitignore",
 		"/home/erik/Documents/js/kanban/.git/COMMIT_EDITMSG",
 		"/home/erik/.bashrc",
@@ -407,12 +550,7 @@
 		"/home/erik/Documents/ruby/quest-web/ruby.txt",
 		"/var/lib/dpkg/info/xserver-common-lts-raring.postrm",
 		"/run/user/erik/gvfs/ftp:host=stanuj.sk,user=stanuj.sk/catalog/view/theme/centred/stylesheet/stylesheet.css",
-		"/home/erik/Documents/ruby/blog/config/routes.rb",
-		"/home/erik/Documents/ruby/blog/app/models/article.rb",
-		"/home/erik/Documents/ruby/blog/app/views/articles/index.json.jbuilder",
-		"/home/erik/Documents/ruby/blog/app/views/articles/show.json.jbuilder",
-		"/home/erik/Documents/ruby/blog/app/views/articles/show.html.erb",
-		"/home/erik/Documents/test"
+		"/home/erik/Documents/ruby/blog/config/routes.rb"
 	],
 	"find":
 	{
@@ -430,6 +568,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"startD",
+			"Des",
+			"due",
+			"forget",
+			"closeMo",
+			"close",
+			"priority",
+			"forget",
+			"project",
+			"saveCh",
+			"save",
+			"Journals",
+			"detail",
+			"showFooter",
+			"save",
+			"dueDat",
+			"save",
+			"renderU",
+			"changeUser",
+			"User",
+			"leave",
+			"footer",
+			".userList",
+			"user",
 			"createDefaultTemplate",
 			"serve",
 			"renderU",
@@ -446,7 +608,7 @@
 			"end",
 			"root"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
@@ -457,30 +619,116 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
-		"wrap": false
+		"whole_word": false,
+		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/styles/main.css",
+					"file": "app/scripts/templates/loading.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2055,
+						"buffer_size": 1228,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2044,
-								2044
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/scripts/views/loading.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1314,
+								1314
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/scripts/views/landing.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1761,
+								1761
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/styles/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
 							]
 						],
 						"settings":
@@ -489,99 +737,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2269.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/scripts/templates/issueInUserDetail.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6813,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6654,
-								6654
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3580.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/scripts/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2640,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								640,
-								640
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/scripts/views/issueInUserDetail.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								294,
-								294
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

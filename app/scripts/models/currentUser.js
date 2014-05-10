@@ -17,8 +17,6 @@ define([
         initialize: function(){
         	console.log('Current user created');
 
-            _.bindAll(this, 'projectMembersFetched');
-
             this.managedProjects = {};
 
             this.listenTo(Backbone.dispatcher, 'projectsFetched', this.managedProjectsMembersFetch);

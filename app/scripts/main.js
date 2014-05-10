@@ -55,15 +55,8 @@ require([
     'bootstrap',
 ], function ( $, Backbone, Kanban) {
 
-
-    //Resend events to Backbone dispatcher
-    window.onresize = function() { Backbone.dispatcher.trigger('resize') };
-
     //Global app settings
     Backbone.app = {};
-
-    //Global url location
-    Backbone.app.url = 'http://localhost:3000/';
 
     //Need to add .json to urls and change data structure
     //Also add header with redmine api key
@@ -74,9 +67,11 @@ require([
         options.crossDomain = true;
         options.headers = options.headers || {};
 
-        _.extend(options.headers, {
-            'X-Redmine-API-Key': '0d6333b04653923c31008ef0773438c682b8d673',
-        })
+        if(Backbone.app.apiKey){
+            _.extend(options.headers, {
+                'X-Redmine-API-Key': Backbone.app.apiKey,
+            })
+        }
 
         //When saving some models date needs to be in .data attribute
         if(options.redmineApiDataFix){

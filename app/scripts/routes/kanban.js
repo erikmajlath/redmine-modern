@@ -4,6 +4,7 @@ define([
     'jquery',
     'backbone',
     'views/boardUsers',
+    'views/landing',
     'models/currentUser',
     'collections/projects',
     'collections/issues',
@@ -14,7 +15,7 @@ define([
     'collections/issueStatuses',
     'collections/issuePriorities',
     'collections/timeActivities',
-], function ($, Backbone, BoardUsersView, currentUser, projects, issues, users, memberships, times, trackers, issueStatuses, issuePriorities, timeActivities) {
+], function ($, Backbone, BoardUsersView, LandingView, currentUser, projects, issues, users, memberships, times, trackers, issueStatuses, issuePriorities, timeActivities) {
     'use strict';
 
     var KanbanRouter = Backbone.Router.extend({
@@ -22,10 +23,14 @@ define([
             console.log('Kanban Router Initialized!');
 
             dev.r.kanban = this;
+            Backbone.kanban = this;
 
             //Global dispatcher! Carefuly!!! Very dangerous in future
             Backbone.dispatcher = _.clone(Backbone.Events);
             this.listenTo(Backbone.dispatcher, 'all', this.logEvent);
+
+            //Resend events to Backbone dispatcher
+            window.onresize = function() { Backbone.dispatcher.trigger('resize') };
 
 
             //Global space for collections
@@ -49,44 +54,11 @@ define([
 
             //Starting history!!! DO THIS AFTER INITIALIZATION
             Backbone.history.start();
-
-
-            //Load order current user > projects > project members > issues > times
-
-            //fetch currents user with membership
-            Backbone.c.currentUser.fetch({
-                data: {include: 'memberships'},
-                success: function(){
-                    Backbone.dispatcher.trigger('currentUserFetched');
-                },
-            });
-
-            /*
-                        Backbone.c.users.fetch();
-            Backbone.c.issues.fetch();
-            Backbone.c.times.fetch();
-
-            */
-            //This can be loaded without waiting
-            Backbone.c.trackers.fetch();
-            Backbone.c.issueStatuses.fetch();
-            Backbone.c.issuePriorities.fetch();
-            Backbone.c.timeActivities.fetch();
-            
-
-            
-            this.listenTo(Backbone.dispatcher, 'relationsComplete', this.relationsComplete);
-
-            //Models with relations
-            //Need to wait till fully loaded and raltioned
-            this.relations = {
-                issues: false,
-                times: false,
-            };
     	},
 
         routes: {
-        	'': 'boardUsers',
+        	'': 'landing',
+            'login': 'landing',
         	'boardUsers': 'boardUsers',
         },
 
@@ -107,10 +79,9 @@ define([
             }
 
             //Render our new view
-            $('main').html(view.render().el);
+            $('.main').html(view.render().el);
 
             //Do postRender if present
-            console.log(view.postRender);
             if(view.postRender)
                 view.postRender();
 
@@ -118,13 +89,9 @@ define([
             this.currentView = view;
         },
 
-        relationsComplete: function(item){
-            this.relations[item] = true;
-
-            if(this.relations.issues && this.relations.times){
-                Backbone.dispatcher.trigger('collectionsFetched');
-            }
-        }
+        landing: function(){
+            this.changePage(new LandingView());
+        },
     });
 
     return KanbanRouter;

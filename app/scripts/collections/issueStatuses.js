@@ -21,12 +21,15 @@ define([
         initialize: function(){
             dev.c.issueStatuses = this;
             
-            this.on('sync', this.onReset);
+            this.listenTo(Backbone.dispatcher, 'currentUserFetched', this.afterCurrentUser);
         },
 
-        onReset: function(e){
-            //Tell applicaiton that this has been fetched
-            Backbone.dispatcher.trigger('fetchComplete', 'issueStatuses');
+        afterCurrentUser: function(){
+            this.fetch({
+                success: function(){
+                    Backbone.dispatcher.trigger('issueStatusesFetched');
+                },
+            });
         },
     });
 

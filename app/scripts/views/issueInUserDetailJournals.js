@@ -46,11 +46,11 @@ define([
 
         //Give colletionof journals
         niceDate: function(collection){
-            var today = Date.today();
+            var now = Date.parse('now');
             _(collection).map(function(item){ 
                 var date = Date.parse(item.created_on);
 
-                var difference = today.getTime() - date.getTime();
+                var difference = now.getTime() - date.getTime();
                 var hoursDifference = difference/1000/60/60;
                 var daysDifference = hoursDifference/24;
                 var monthsDifference = daysDifference/30;

@@ -23,13 +23,15 @@ define([
             
             this.listenTo(this, 'add', this.added);
 
-            this.on('sync', this.onReset);
+            this.listenTo(Backbone.dispatcher, 'currentUserFetched', this.afterCurrentUser);
         },
 
-        onReset: function(e){
-            //Tell applicaiton that this has been fetched
-            Backbone.dispatcher.trigger('fetchComplete', 'issuePriorities');
-
+        afterCurrentUser: function(){
+            this.fetch({
+                success: function(){
+                    Backbone.dispatcher.trigger('issuePrioritiesFetched');
+                },
+            });
         },
 
         added: function(model){

@@ -17,12 +17,15 @@ define([
         initialize: function(){
             dev.c.timeActivities = this;
             
-            this.on('sync', this.onReset);
+            this.listenTo(Backbone.dispatcher, 'currentUserFetched', this.afterCurrentUser);
         },
 
-        onReset: function(e){
-            //Tell applicaiton that this has been fetched
-            Backbone.dispatcher.trigger('fetchComplete', 'timeActivities');
+        afterCurrentUser: function(){
+            this.fetch({
+                success: function(){
+                    Backbone.dispatcher.trigger('timeActivitiesFetched');
+                },
+            });
         },
 
         parse: function(data){
