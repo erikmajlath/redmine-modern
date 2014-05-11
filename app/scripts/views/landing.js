@@ -14,8 +14,7 @@ define([
 
         events:{
             'click .tryConnect': 'tryConnect',
-            'keyup .redmineUrlInput': 'setRedmineUrl',
-            'keyup .apiKeyInput': 'setApiKey',
+            'click .setTesting': 'setTesting',
         },
 
         initialize: function(){
@@ -35,29 +34,36 @@ define([
         	this.remove();
         },
 
-        setRedmineUrl: function(){
-            Backbone.app.url = this.$('.redmineUrlInput').val();
-        },
+        setTesting: function(){
+            var apiKey = 'ed763b485652e44d44b3b838f22c48b83632e1ca';
+            var url = 'redmine.majlath.org';
 
-        setApiKey: function(){
-        	Backbone.app.apiKey = this.$('.apiKeyInput').val();
+            this.$('.redmineUrlInput').val(url);
+            this.$('.apiKeyInput').val(apiKey);
         },
 
         tryConnect: function(){
-            var url = Backbone.app.url;
+            //Do some test agains url
+            var url = this.$('.redmineUrlInput').val();
 
             var isUrl = /^http:\/\//;
             if(!isUrl.test(url)){
-                Backbone.app.url = 'http://'+Backbone.app.url;
+                url= 'http://'+url;
             }
 
             var endWithSlash = /\/$/
             if(!endWithSlash.test(url)){
-                Backbone.app.url+= '/';
+                url+= '/';
             }
 
+            //Update url in interface
             this.$('.redmineUrlInput').val(Backbone.app.url);
 
+            //Set globally
+            Backbone.app.apiKey = this.$('.apiKeyInput').val();
+            Backbone.app.url = url;
+
+            //Try to connect
             new LoadingView();
         },
     });

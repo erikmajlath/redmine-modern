@@ -280,6 +280,8 @@ define([
             }else{
                 //Creating new issue
                 var data = this.model.toJSON();
+
+                this.stopListening();
                 this.model.destroy();
 
                 Backbone.c.issues.create(data);

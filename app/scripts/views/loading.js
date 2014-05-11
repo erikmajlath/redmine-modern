@@ -77,7 +77,10 @@ define([
         },
 
         currentUserFetched: function(){
+            var user = Backbone.c.currentUser;
+            var username = user.get('firstname')+' '+user.get('lastname');
             this.$('.loading').show();
+            this.$('.userText').html(username);
             Backbone.kanban.navigate('boardUsers', {trigger: true});
         },
 
