@@ -21,7 +21,17 @@ define([
         },
 
         parse: function(data){
-        	return data.time_entries;
+            var newData = _(data.time_entries).map(function(time){ 
+
+                time.issue_id = time.issue.id;
+                time.project_id = time.project.id;
+                time.user_id = time.user.id;
+                time.activity_id = time.activity.id;
+
+                return time;
+            })
+
+        	return newData;
         },
 
         issuesFetched: function(){

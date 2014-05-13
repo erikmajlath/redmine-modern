@@ -71,6 +71,7 @@ define([
             this.listenTo(this.model, 'change:priority_id', this.renderPriority);
             this.listenTo(this.model, 'change:due_date', this.renderDueDate);
             this.listenTo(this.model, 'change:journals', this.renderJournals);
+            this.listenTo(this.model, 'add:times', this.renderTimes);
 
             this.journalsView = new journalsView({collection: this.model.get('journals'), hasId: this.model.has('id')});
 
@@ -96,7 +97,7 @@ define([
             data.issueStatuses = Backbone.c.issueStatuses.toJSON();
             data.issuePriorities = Backbone.c.issuePriorities.toJSON();
             data.activities = Backbone.c.timeActivities.toJSON();
-            data.users = Backbone.c.users.toJSON();
+            data.users = Backbone.c.users.toJSON()
 
             this.$el.html(this.template(data));
             this.journalsView.setElement(this.$el.find('.journalsWrap')).render();
@@ -110,6 +111,14 @@ define([
             $('#issueDetail').modal().on('hidden.bs.modal', function () {
                 self.destroy();
             });
+
+            //Set focus on subject if creating new
+            if(!this.model.has('id')){
+                var that = this;
+                $('#issueDetail').on('shown.bs.modal', function(){
+                    that.editSubject();
+                })  
+            }
 
             //Attach datepicker for Time
             this.$('.timeDateInput').datepicker({
@@ -230,9 +239,10 @@ define([
 
         submitTime: function(){
             this.toggleTime();
-            var hours = $('.timeHoursInput').val();
+            var hours = parseInt($('.timeHoursInput').val());
             var date = $('.timeDateInput').val();
             var activity = $('.timeActivityInput').val();
+            var comments = $('.timeCommentsInput').val();
 
             Backbone.c.times.create({
                 project_id: this.model.get('project_id'),
@@ -241,7 +251,15 @@ define([
                 activity_id: activity,
                 hours: hours,
                 spent_on: date,
+                comments: comments,
             });
+        },
+
+        renderTimes: function(){
+            var time = this.model.get('times').reduce(function(mem, item){
+                return mem + item.get('hours');
+            },0)
+            this.$('.timeSpentText').html(time);
         },
 
         pickDueDate: function(){

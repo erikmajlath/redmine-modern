@@ -173,7 +173,7 @@
 								<span class="glyphicon glyphicon-ok-circle"></span> Spent time
 							</div>
 							<span class="timeSpentText">
-								<%= times.reduce(function(mem, item){
+								<%= _(times).reduce(function(mem, item){
 									return mem+item.hours;
 								},0) %>
 							</span>
@@ -202,6 +202,9 @@
 											})
 										%>
 										</select>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control timeCommentsInput" placeholder="Comment">
 									</div>
 									<button class="btn btn-primary submitTime">Done</button>
 									<button class="btn btn-danger closeTime"><span class="glyphicon glyphicon-remove"></button>

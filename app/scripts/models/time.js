@@ -60,24 +60,12 @@ define([
     	],
 
     	initialize: function(){
-            var issue = Backbone.c.issues.get(this.get('issue').id);
-            this.set('issue_id', issue);
-
-            var project = Backbone.c.projects.get(this.get('project').id);
-            this.set('project_id', project);
-
-            var user = Backbone.c.users.get(this.get('user').id);
-            this.set('user_id', user);
-
-            var activity = Backbone.c.timeActivities.get(this.get('activity').id);
-            this.set('activity_id', activity);
     	},
 
         defaults: {
         },
 
         parse: function(data){
-            if(data.time_entry) return data.time_entry;
             return data;
         },
 

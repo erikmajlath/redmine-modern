@@ -19,7 +19,7 @@ define([
             this.collection = Backbone.c.users;
 
             //Times are last part of loading process, we can start rendering right after
-            Backbone.dispatcher.once('issuesFetched', this.renderContent, this);
+            Backbone.dispatcher.once('timesFetched', this.renderContent, this);
             this.listenTo(Backbone.dispatcher, 'resize', this.windowResize);
 
             this.children = _([]);

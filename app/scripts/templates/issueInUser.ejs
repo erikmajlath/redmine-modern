@@ -29,7 +29,9 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<span class="issueTime pull-left">
-					<%= spent_time %> 
+						<%= _(times).reduce(function(mem, item){
+							return mem+item.hours;
+						},0) %>
 					/ 
 					<% if(typeof estimated_hours == 'undefined'){
 							print('0');

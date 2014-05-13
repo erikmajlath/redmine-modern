@@ -18,6 +18,9 @@ a{
 .nephirits{
 	color: #27ae60;
 }
+.datepicker{
+	z-index: 1200 !important;
+}
 /* END COMMON*/
 
 /* BOARD */

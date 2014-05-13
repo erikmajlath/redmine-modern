@@ -67,7 +67,11 @@ define([
         },
 
         boardUsers: function(){
-        	this.changePage(new BoardUsersView({collection: Backbone.c.users}));
+            if(typeof Backbone.app.url === 'undefined'){
+                Backbone.kanban.navigate('', {trigger: true});
+            }else{
+                this.changePage(new BoardUsersView({collection: Backbone.c.users}));    
+            }
         },
 
         changePage: function(view){

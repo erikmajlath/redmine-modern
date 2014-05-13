@@ -167,9 +167,6 @@ define([
                 json[ rel.keyDestination ] = value;
             });
 
-            //Return spent time together
-            json.spent_time = this.get('times').reduce(function(mem, item){return mem + item.get('hours')} ,0);
-
             return json;
         },
     });
