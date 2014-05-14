@@ -193,15 +193,17 @@
 										value="<%= Date.today().toString('yyyy-MM-dd') %>">
 									</div>
 									<div class="form-group">
-										<select class="form-control timeActivityInput">
-										<%
-											_(activities).each(function(item){
-												%>
-												<option value="<%= item.id%>"><%= item.name %></option>
-												<%
-											})
-										%>
-										</select>
+										<div>
+											<select class="form-control timeActivityInput">
+											<%
+												_(activities).each(function(item){
+													%>
+													<option value="<%= item.id%>"><%= item.name %></option>
+													<%
+												})
+											%>
+											</select>
+										</div>
 									</div>
 									<div class="form-group">
 										<input type="text" class="form-control timeCommentsInput" placeholder="Comment">

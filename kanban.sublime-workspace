@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"edit",
+				"editSubject"
+			],
+			[
+				"template",
+				"templateJSON"
+			],
+			[
+				"time_",
+				"time_entries"
+			],
+			[
+				"activ",
+				"activity_id"
+			],
+			[
 				"user",
 				"username"
 			],
@@ -368,18 +384,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/scripts/templates/loading.ejs",
+			"file": "app/scripts/views/issueInUser.js",
 			"settings":
 			{
-				"buffer_size": 1481,
+				"buffer_size": 1026,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/views/loading.js",
+			"file": "app/scripts/views/issueInUserDetail.js",
 			"settings":
 			{
-				"buffer_size": 3468,
+				"buffer_size": 10703,
 				"line_ending": "Unix"
 			}
 		}
@@ -411,37 +427,39 @@
 	},
 	"file_history":
 	[
-		"/home/erik/Documents/js/kanban/app/scripts/templates/boardUsers.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/views/boardUsers.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/loading.ejs",
+		"/home/erik/Documents/js/kanban/app/styles/main.css",
+		"/home/erik/Documents/js/kanban/app/scripts/views/loading.js",
 		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
+		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
+		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
+		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
+		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
+		"/home/erik/Documents/js/kanban/app/scripts/templates/boardUsers.ejs",
 		"/home/erik/Documents/js/kanban/app/index.html",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/landing.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/landing.js",
-		"/home/erik/Documents/js/kanban/app/styles/main.css",
-		"/home/erik/Documents/js/kanban/app/scripts/views/boardUsers.js",
 		"/home/erik/Documents/js/kanban/Gruntfile.js",
 		"/home/erik/Documents/js/kanban/app/.htaccess",
 		"/home/erik/Documents/js/kanban/dist/.htaccess",
-		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/timeActivities.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/trackers.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issueStatuses.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/issuePriorities.js",
 		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUser.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/main.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/currentUser.js",
 		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetailJournals.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetailJournals.ejs",
-		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
-		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/userWithIssues.js",
 		"/home/erik/Documents/tex/bc/mockup/ep2svg.sh",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/issues.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/userWithIssues.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/users.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/memberships.js",
-		"/home/erik/Documents/js/kanban/app/scripts/collections/times.js",
-		"/home/erik/Documents/js/kanban/app/scripts/models/time.js",
 		"/home/erik/Documents/js/kanban/app/scripts/collections/projects.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/project.js",
 		"/home/erik/Documents/js/kanban/app/scripts/models/user.js",
@@ -536,9 +554,7 @@
 		"/home/erik/Documents/ruby/sinatra-example/app.modular.rb",
 		"/home/erik/Documents/ruby/sinatra-example/README",
 		"/home/erik/Documents/ruby/sinatra-example/config.ru",
-		"/home/erik/Documents/ruby/sinatra-example/config.",
-		"/home/erik/Documents/ruby/quest-web/quest.rb",
-		"/home/erik/Documents/ruby/quest-web/ruby.txt"
+		"/home/erik/Documents/ruby/sinatra-example/config."
 	],
 	"find":
 	{
@@ -556,6 +572,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"submitTim",
+			"time",
+			"renderTim",
+			"renderTim	",
+			"change:times",
+			"renderTimes",
+			"submitTime",
+			"subitTim",
+			"setTim",
+			"time",
+			"renderTimes",
 			"save",
 			"copy",
 			"build",
@@ -624,25 +651,25 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/scripts/templates/loading.ejs",
+					"file": "app/scripts/views/issueInUser.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1481,
+						"buffer_size": 1026,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								480,
-								480
+								656,
+								656
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -654,19 +681,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/scripts/views/loading.js",
+					"file": "app/scripts/views/issueInUserDetail.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3468,
+						"buffer_size": 10703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2907,
-								2907
+								4237,
+								4237
 							]
 						],
 						"settings":
@@ -676,7 +703,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1071.0,
+						"translation.y": 1798.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
