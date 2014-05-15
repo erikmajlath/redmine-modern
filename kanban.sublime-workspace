@@ -390,14 +390,6 @@
 				"buffer_size": 1026,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "app/scripts/views/issueInUserDetail.js",
-			"settings":
-			{
-				"buffer_size": 10703,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -427,12 +419,13 @@
 	},
 	"file_history":
 	[
+		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUserDetail.ejs",
+		"/home/erik/Documents/js/kanban/.gitignore",
 		"/home/erik/Documents/js/kanban/app/scripts/views/boardUsers.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/loading.ejs",
 		"/home/erik/Documents/js/kanban/app/styles/main.css",
 		"/home/erik/Documents/js/kanban/app/scripts/views/loading.js",
-		"/home/erik/Documents/js/kanban/app/scripts/views/issueInUserDetail.js",
 		"/home/erik/Documents/js/kanban/app/scripts/routes/kanban.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/issueInUser.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/models/issue.js",
@@ -486,7 +479,6 @@
 		"/home/erik/Documents/js/kanban/app/scripts/templates/modalContainer.ejs",
 		"/home/erik/Documents/js/kanban/app/scripts/views/usersIssues.js",
 		"/home/erik/Documents/js/kanban/app/scripts/templates/usersIssues.ejs",
-		"/home/erik/Documents/js/kanban/.gitignore",
 		"/home/erik/Documents/js/kanban/.git/COMMIT_EDITMSG",
 		"/home/erik/.bashrc",
 		"/home/erik/Documents/js/kanban/bower.json",
@@ -572,6 +564,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"timeSpe",
 			"submitTim",
 			"time",
 			"renderTim",
@@ -646,7 +639,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -673,37 +666,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 153.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/scripts/views/issueInUserDetail.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10703,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4237,
-								4237
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1798.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
