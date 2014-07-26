@@ -14,7 +14,7 @@ define([
     var UserwithissuesView = Backbone.View.extend({
         template: JST['app/scripts/templates/userWithIssues.ejs'],
 
-        className: 'userWithIssues',
+        className: 'userWithIssues well well-sm',
 
         events: {
             'click .addIssue': 'toggleIssueInput',
